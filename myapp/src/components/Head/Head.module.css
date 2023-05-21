@@ -1,10 +1,10 @@
 .head__container {
   background: #a1e2eb;
-  max-height: 600px;
+  min-height: 600px;
   margin-bottom: 40px;
 }
 .banner__container {
-  max-width: 1440px;
+  max-width: 1410px;
   margin: 0 auto;
 }
 .head__content {

@@ -1,6 +1,6 @@
 .discount__container {
   background: linear-gradient(262.69deg, #339933 -0.43%, #006300 104.36%);
-  max-height: 476px;
+  min-height: 476px;
   margin-bottom: 49px;
 }
 .discount__content {
