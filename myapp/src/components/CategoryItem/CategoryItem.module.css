@@ -1,0 +1,27 @@
+.category__item {
+  cursor: pointer;
+  /* To add forward on categoriesPage onclick */
+  position: relative;
+  transition: all 0.3s ease;
+}
+.category__item:hover {
+  opacity: 0.8;
+  top: 1px;
+}
+.category__img {
+  width: 345px;
+  height: 350px;
+  max-width: 100%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border-radius: 15px;
+}
+
+.category__title {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 130%;
+  letter-spacing: 0.03em;
+  color: #000000;
+  text-align: center;
+}

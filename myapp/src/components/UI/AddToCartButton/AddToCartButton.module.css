@@ -1,0 +1,25 @@
+.add__to__cart__btn {
+  width: 279px;
+  height: 72px;
+  background: #f1fff1;
+  border: 2px solid #339933;
+  border-radius: 21px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 130%;
+  color: #339933;
+  position: relative;
+  transition: background 0.3s ease, box-shadow 0.1s ease-out;
+}
+.add__to__cart__btn:hover {
+  background: #339933;
+  border: 1px solid whitesmoke;
+  color: white;
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
+    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+}
+.add__to__cart__btn:active {
+  top: 1px;
+  box-shadow: none;
+}

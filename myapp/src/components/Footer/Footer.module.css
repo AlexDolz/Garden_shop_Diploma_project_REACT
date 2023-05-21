@@ -1,0 +1,91 @@
+.footer {
+  min-height: 900px;
+}
+.footer__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 47px;
+}
+.contacts__title {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 130%;
+  padding-bottom: 25px;
+}
+
+.contacts__number {
+  font-weight: 600;
+  font-size: 70px;
+  line-height: 130%;
+  padding-bottom: 33px;
+}
+.contacts__icons {
+  display: flex;
+  gap: 68px;
+}
+.contacts__icon__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.contacts__icon__item {
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+}
+.contacts__icon__item:hover {
+  color: #c55b94;
+}
+.whatsapp__icon:hover {
+  color: #339933;
+}
+.icon__item__text {
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 130%;
+}
+
+.address__title {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 130%;
+  padding-bottom: 25px;
+}
+
+.address {
+  max-width: 564px;
+  padding-bottom: 20px;
+}
+.address a {
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 130%;
+  text-decoration-line: underline;
+  text-underline-offset: 7px;
+}
+.address a:link {
+  color: black;
+}
+.address a:visited {
+  color: #3a3a3a;
+}
+.address a:hover {
+  color: rgb(12, 12, 173);
+}
+.address a:active {
+  color: #339933;
+}
+
+.address__subtitle {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 130%;
+  padding-bottom: 2px;
+}
+.address__subtitle__hours {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 130%;
+}

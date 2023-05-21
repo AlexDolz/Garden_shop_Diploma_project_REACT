@@ -1,0 +1,59 @@
+.discount__container {
+  background: linear-gradient(262.69deg, #339933 -0.43%, #006300 104.36%);
+  max-height: 476px;
+  margin-bottom: 49px;
+}
+.discount__content {
+  display: flex;
+  align-items: center;
+  gap: 200px;
+}
+.discount__img {
+  padding: 27px 0 27px 91px;
+}
+.discount__info {
+  display: flex;
+  flex-direction: column;
+  padding: 0 25px 0 0;
+}
+
+.discount__title {
+  font-weight: 700;
+  font-size: 90px;
+  line-height: 120%;
+  letter-spacing: 0.03em;
+  color: #ffffff;
+}
+.discount__subtitle {
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 60px;
+  letter-spacing: 0.03em;
+  color: #ffffff;
+  padding-bottom: 46px;
+}
+
+.discount__btn {
+  background: linear-gradient(262.69deg, #339933 -0.43%, #006300 104.36%);
+  border: 2.39494px solid #ffffff;
+  border-radius: 25.1468px;
+  font-weight: 700;
+  font-size: 28.7392px;
+  line-height: 120%;
+  letter-spacing: 0.03em;
+  color: #ffffff;
+  padding: 21px 0;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.3s ease, box-shadow 0.1s ease-out;
+}
+
+.discount__btn:hover {
+  background: #339933;
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
+    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+}
+.discount__btn:active {
+  top: 1px;
+  box-shadow: none;
+}

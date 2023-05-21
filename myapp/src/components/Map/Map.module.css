@@ -1,0 +1,10 @@
+.footer__map {
+  min-width: 1345px;
+  height: 535px;
+}
+.map__img {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  border-radius: 15px;
+}
