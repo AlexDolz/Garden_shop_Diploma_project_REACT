@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/Garden_shop_Diplom_project_REACT/static/css/main.2c4e351f.css",
+    "main.js": "/Garden_shop_Diplom_project_REACT/static/js/main.b8873a02.js",
+    "static/media/banner_img.png": "/Garden_shop_Diplom_project_REACT/static/media/banner_img.658003f07fff1d487ea7.png",
+    "static/media/footer_map.png": "/Garden_shop_Diplom_project_REACT/static/media/footer_map.23c12fea7803dc272a41.png",
+    "static/media/discount_img.png": "/Garden_shop_Diplom_project_REACT/static/media/discount_img.81a782ecb2748e1dc610.png",
+    "index.html": "/Garden_shop_Diplom_project_REACT/index.html",
+    "main.2c4e351f.css.map": "/Garden_shop_Diplom_project_REACT/static/css/main.2c4e351f.css.map",
+    "main.b8873a02.js.map": "/Garden_shop_Diplom_project_REACT/static/js/main.b8873a02.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2c4e351f.css",
+    "static/js/main.b8873a02.js"
+  ]
+}
