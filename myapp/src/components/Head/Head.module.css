@@ -2,6 +2,7 @@
   background: #a1e2eb;
   min-height: 600px;
   margin-bottom: 40px;
+  position: relative;
 }
 .banner__container {
   max-width: 1410px;
@@ -18,7 +19,7 @@
   flex-direction: column;
   justify-content: space-between;
   margin-left: 20px;
-  padding-bottom: 135px;
+  padding-top: 130px;
 }
 .head__title {
   font-weight: 700;
@@ -60,6 +61,7 @@
 }
 .head__img {
   max-width: 100%;
-  position: relative;
-  bottom: 100px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
 }
