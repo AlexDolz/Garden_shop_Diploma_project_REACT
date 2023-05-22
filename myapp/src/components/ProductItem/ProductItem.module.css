@@ -1,19 +1,24 @@
 .product__item {
   position: relative;
-  width: 300px;
   transition: opacity 0.3s ease;
   cursor: pointer;
   /* To add forward on productInfoPage onclick */
 }
+.product__img__wrapper {
+  width: 300px;
+  height: 300px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
 .product__item:hover {
   opacity: 0.8;
+  top: 1px;
 }
 .product__img {
   width: 100%;
-  height: 300px;
+  height: 100%;
   max-width: 100%;
   object-fit: contain;
-  margin-bottom: 20px;
   border-radius: 15px;
 }
 .product__price {
@@ -62,4 +67,12 @@
   position: absolute;
   bottom: 155px;
   padding: 10px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0s linear 0.3s;
+}
+.product__modal.visible {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s ease;
 }

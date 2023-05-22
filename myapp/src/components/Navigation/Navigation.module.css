@@ -39,8 +39,10 @@
   height: 29px;
   color: #000000;
 }
-.navigation__icon:active {
+.navigation__icon:hover {
   color: #339933;
+}
+.navigation__icon:active {
   position: relative;
   top: 1px;
 }

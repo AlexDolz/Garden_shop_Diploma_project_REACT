@@ -14,7 +14,15 @@
   line-height: 120%;
   letter-spacing: 0.03em;
   color: #6c6c6c;
-  padding: 27px 0 27px 50px;
+  padding: 27px 50px 27px 50px;
   margin-bottom: 30px;
   outline: none;
+}
+.discount__input[type='number']::-webkit-inner-spin-button,
+.discount__input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+.discount__input[type='number'] {
+  -moz-appearance: textfield;
 }

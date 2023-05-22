@@ -28,11 +28,13 @@ const ProductItem = ({ image, price, discont_price, title }) => {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <img
-        className={s.product__img}
-        src={`${backEndUrl}${image}`}
-        alt={title}
-      />
+      <div className={s.product__img__wrapper}>
+        <img
+          className={s.product__img}
+          src={`${backEndUrl}${image}`}
+          alt={title}
+        />
+      </div>
       <div className={s.product__price}>
         <p className={s.product__current__price}>{price}$</p>
         {discont_price && (
@@ -46,7 +48,7 @@ const ProductItem = ({ image, price, discont_price, title }) => {
       </div>
       <h3 className={s.product__title}>{title}</h3>
       {isHovered && (
-        <div className={s.product__modal}>
+        <div className={`${s.product__modal} ${isHovered ? s.visible : ''}`}>
           {/* addToCartButton onclick{handleAddToCart} to make! */}
           <AddToCartButton />
         </div>
