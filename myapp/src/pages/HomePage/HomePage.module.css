@@ -21,7 +21,7 @@
   position: relative;
 }
 
-.categories__btn a {
+.categories__btn {
   font-weight: 700;
   font-size: 12px;
   line-height: 130%;
@@ -35,10 +35,9 @@
   background: #a1e2eb;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-}
-.categories__btn:hover a {
   color: black;
 }
+
 .categories__btn:active {
   top: 1px;
   box-shadow: none;
