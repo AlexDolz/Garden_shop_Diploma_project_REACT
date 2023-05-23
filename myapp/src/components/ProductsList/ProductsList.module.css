@@ -1,5 +1,8 @@
 .products__list {
-  display: flex;
-  /* align-items: center; */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  justify-items: center;
   gap: 40px;
+  row-gap: 44px;
+  padding: 0 6px 80px 6px;
 }

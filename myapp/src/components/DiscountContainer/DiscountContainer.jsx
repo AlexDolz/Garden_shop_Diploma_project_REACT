@@ -1,7 +1,6 @@
 import React from 'react';
 import s from './DiscountContainer.module.css';
 import discount_img from './media/discount_img.png';
-import Button from '../UI/Button/Button';
 import DiscountForm from '../DiscountForm/DiscountForm';
 
 const DiscountContainer = () => {
@@ -17,7 +16,6 @@ const DiscountContainer = () => {
           <h2 className={s.discount__title}>5% off</h2>
           <h4 className={s.discount__subtitle}>on the first order</h4>
           <DiscountForm />
-          <Button className={s.discount__btn} text='Get a discount' />
         </div>
       </div>
     </div>

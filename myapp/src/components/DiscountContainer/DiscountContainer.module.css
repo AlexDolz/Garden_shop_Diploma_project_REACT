@@ -32,28 +32,3 @@
   color: #ffffff;
   padding-bottom: 46px;
 }
-
-.discount__btn {
-  background: linear-gradient(262.69deg, #339933 -0.43%, #006300 104.36%);
-  border: 2.39494px solid #ffffff;
-  border-radius: 25.1468px;
-  font-weight: 700;
-  font-size: 28.7392px;
-  line-height: 120%;
-  letter-spacing: 0.03em;
-  color: #ffffff;
-  padding: 21px 0;
-  cursor: pointer;
-  position: relative;
-  transition: background 0.3s ease, box-shadow 0.1s ease-out;
-}
-
-.discount__btn:hover {
-  background: #339933;
-  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
-    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
-}
-.discount__btn:active {
-  top: 1px;
-  box-shadow: none;
-}
