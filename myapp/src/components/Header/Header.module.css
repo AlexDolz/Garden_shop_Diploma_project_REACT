@@ -5,7 +5,7 @@
   padding: 20px 0 76px 0;
 }
 
-.header__logo__btn {
+.header__logo__btn__container {
   min-width: 175px;
   gap: 59px;
   display: flex;
@@ -17,30 +17,4 @@
   width: 72px;
   height: 72px;
   cursor: pointer;
-}
-
-.header__btn {
-  width: 125px;
-  height: 49px;
-  background: #339933;
-  border: 2px solid #339933;
-  border-radius: 5px;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 20px;
-  color: #ffffff;
-  cursor: pointer;
-  transition: background 0.3s ease, box-shadow 0.1s ease-out;
-  position: relative;
-}
-
-.header__btn:hover {
-  background: #3eba3e;
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
-    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-}
-
-.header__btn:active {
-  top: 1px;
-  box-shadow: none;
 }

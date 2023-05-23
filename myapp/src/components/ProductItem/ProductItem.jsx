@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import s from './ProductItem.module.css';
-import AddToCartButton from '../UI/AddToCartButton/AddToCartButton';
+import Button from '../UI/Button/Button';
 
 const ProductItem = ({ image, price, discont_price, title }) => {
   const backEndUrl = 'http://localhost:3333';
@@ -8,26 +8,8 @@ const ProductItem = ({ image, price, discont_price, title }) => {
     ((price - discont_price) / price) * 100
   );
 
-  // const [isHovered, setIsHovered] = useState(false);
-
-  // const handleMouseEnter = () => {
-  //   setIsHovered(true);
-  // };
-
-  // const handleMouseLeave = () => {
-  //   setIsHovered(false);
-  // };
-
-  // const handleAddToCart = () => {
-
-  // }
-
   return (
-    <div
-      className={s.product__item}
-      // onMouseEnter={handleMouseEnter}
-      // onMouseLeave={handleMouseLeave}
-    >
+    <div className={s.product__item}>
       <div className={s.product__img__wrapper}>
         <img
           className={s.product__img}
@@ -36,9 +18,8 @@ const ProductItem = ({ image, price, discont_price, title }) => {
         />
         {/* addToCartButton onclick{handleAddToCart} to make! */}
         <div className={s.product__modal}>
-          <AddToCartButton className={s.add__to__cart__btn} />
+          <Button text='Add to cart' style='add__to__cart__btn' />
         </div>
-        {/* <button>Add to cart</button> */}
       </div>
       <div className={s.product__price__wrapper}>
         {discont_price ? (
@@ -54,11 +35,6 @@ const ProductItem = ({ image, price, discont_price, title }) => {
         )}
       </div>
       <h3 className={s.product__title}>{title}</h3>
-      {/* {isHovered && (
-        <div className={`${s.product__modal} ${isHovered ? s.visible : ''}`}>
-          <AddToCartButton />
-        </div>
-      )} */}
     </div>
   );
 };

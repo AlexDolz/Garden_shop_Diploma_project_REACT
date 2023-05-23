@@ -5,6 +5,7 @@ import CategoriesList from '../../components/CategoriesList/CategoriesList';
 import DiscountContainer from '../../components/DiscountContainer/DiscountContainer';
 import Sale from '../../components/Sale/Sale';
 import { NavLink } from 'react-router-dom';
+import Button from '../../components/UI/Button/Button';
 
 const HomePage = () => {
   return (
@@ -14,7 +15,7 @@ const HomePage = () => {
         <div className={s.categories__texts__btn}>
           <h2 className={s.categories__title}>Catalog</h2>
           <NavLink to={'/categoriesList'}>
-            <button className={s.categories__btn}>All categories</button>
+            <Button text='All categories' style='categories__btn' />
           </NavLink>
         </div>
       </div>

@@ -33,32 +33,7 @@
   line-height: 130%;
   color: #ffffff;
 }
-.head__btn {
-  width: 155px;
-  height: 82px;
-  background: #ffffff;
-  border: none;
-  border-radius: 13px;
-  cursor: pointer;
-  margin-top: 60px;
-  font-weight: 700;
-  font-size: 25px;
-  line-height: 130%;
-  color: #2d2d2d;
-  transition: background 0.3s ease, box-shadow 0.1s ease-out;
-  position: relative;
-}
-.head__btn:hover {
-  background: #a1e2eb;
-  border: 2px solid white;
-  color: white;
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
-    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-}
-.head__btn:active {
-  top: 1px;
-  box-shadow: none;
-}
+
 .head__img {
   max-width: 100%;
   position: absolute;

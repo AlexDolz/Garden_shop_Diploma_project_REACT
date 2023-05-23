@@ -11,34 +11,3 @@
   letter-spacing: 0.03em;
   color: #000000;
 }
-.categories__btn {
-  width: 120px;
-  height: 30.97px;
-  border: 2px solid #8b8b8b;
-  cursor: pointer;
-  transition: border 0.2s ease, background 0.2s ease, color 0.2s ease,
-    box-shadow 0.1s ease-out;
-  position: relative;
-}
-
-.categories__btn {
-  font-weight: 700;
-  font-size: 12px;
-  line-height: 130%;
-  text-align: center;
-  letter-spacing: 0.03em;
-  color: #8b8b8b;
-  text-decoration: none;
-}
-.categories__btn:hover {
-  border: 2px solid #a1e2eb;
-  background: #a1e2eb;
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
-    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-  color: black;
-}
-
-.categories__btn:active {
-  top: 1px;
-  box-shadow: none;
-}

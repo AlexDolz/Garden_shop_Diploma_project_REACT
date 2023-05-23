@@ -34,6 +34,7 @@
   width: 44px;
   height: 44px;
   cursor: pointer;
+  transition: color 0.3s ease-in-out;
 }
 .contacts__icon__item:hover {
   color: #c55b94;

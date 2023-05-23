@@ -6,8 +6,8 @@ import Button from '../UI/Button/Button';
 const DiscountForm = () => {
   return (
     <form className={s.discount__form}>
-      <Input className={s.discount__input} text='+49' />
-      <Button className={s.discount__btn} text='Get a discount' />
+      <Input text='+49' style='discount__input' />
+      <Button text='Get a discount' style='discount__btn' />
     </form>
   );
 };
