@@ -137,7 +137,8 @@
   color: white;
   box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
     rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
-  /* transform: translateY(-103px); */
+  transition: background 0.3s ease, box-shadow 0.1s ease-out,
+    transform 0.3s ease;
 }
 .add__to__cart__btn:active {
   top: 1px;
