@@ -22,3 +22,18 @@ export const fetchProductsList = () => {
       .then(data => dispatch(getProductsListAction(data)));
   };
 };
+
+const getDiscountUrl = `${backEndUrl}/sale/send`;
+
+export const discountRequest = discount => {
+  // console.log(discount);
+  fetch(getDiscountUrl, {
+    method: 'POST',
+    headers: {
+      'Content-type': 'application/json;charset=utf-8',
+    },
+    body: JSON.stringify(discount),
+  })
+    .then(res => res.json())
+    .then(data => console.log(data));
+};
