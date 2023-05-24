@@ -11,7 +11,7 @@ const Input = ({ placeholder, style, name }) => {
       type='number'
       className={inputClasses}
       placeholder={placeholder}
-      name='number'
+      name={name}
     />
   );
 };
