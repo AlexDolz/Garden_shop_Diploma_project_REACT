@@ -18,7 +18,7 @@ const ProductItem = ({ image, price, discont_price, title }) => {
         />
         {/* addToCartButton onclick{handleAddToCart} to make! */}
         <div className={s.product__modal}>
-          <Button text='Add to cart' style='add__to__cart__btn' />
+          <Button text='Add to cart' className='add__to__cart__btn' />
         </div>
       </div>
       <div className={s.product__price__wrapper}>

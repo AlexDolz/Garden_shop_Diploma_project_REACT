@@ -18,8 +18,13 @@ const DiscountForm = () => {
 
   return (
     <form onSubmit={getDiscount} className={s.discount__form}>
-      <Input placeholder='+49' style='discount__input' name='number' />
-      <Button text='Get a discount' style='discount__btn' />
+      <Input
+        placeholder='+49'
+        className='discount__input'
+        name='number'
+        type='number'
+      />
+      <Button text='Get a discount' className='discount__btn' />
     </form>
   );
 };

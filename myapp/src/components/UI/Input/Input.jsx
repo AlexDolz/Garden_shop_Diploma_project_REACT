@@ -2,13 +2,16 @@ import React from 'react';
 import classNames from 'classnames';
 import s from './Input.module.css';
 
-const Input = ({ placeholder, style, name }) => {
-  const inputClasses = classNames(s.input, {
-    [s.discount__input]: style === 'discount__input',
+const Input = ({ placeholder, className, name, type }) => {
+  const inputClasses = classNames({
+    [s.discount__input]: className === 'discount__input',
+    [s.filter__input]: className === 'filter__input',
+    [s.filter__checkbox]: className === 'filter__checkbox',
   });
+
   return (
     <input
-      type='number'
+      type={type}
       className={inputClasses}
       placeholder={placeholder}
       name={name}

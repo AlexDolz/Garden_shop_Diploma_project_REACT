@@ -14,6 +14,9 @@
   padding: 27px 50px 27px 50px;
   outline: none;
 }
+.discount__input:focus {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.8) inset;
+}
 .discount__input[type='number']::-webkit-inner-spin-button,
 .discount__input[type='number']::-webkit-outer-spin-button {
   -webkit-appearance: none;
@@ -21,4 +24,50 @@
 
 .discount__input[type='number'] {
   -moz-appearance: textfield;
+}
+
+/* ******************filter__input, filter__checkbox************************* */
+.filter__input {
+  width: 103px;
+  height: 42px;
+  border: 1px solid #000000;
+  border-radius: 7px;
+  padding: 10px;
+  outline: none;
+}
+.filter__input:focus {
+  box-shadow: 0 0 3px #339933 inset;
+  border-color: #339933;
+}
+
+.filter__input::placeholder {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 130%;
+  letter-spacing: 0.03em;
+  color: #acacac;
+}
+
+.filter__input[type='number']::-webkit-inner-spin-button,
+.filter__input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+.filter__input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+.filter__checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #000000;
+  border-radius: 7px;
+  transition: background-color 0.2s, border-color 0.3s;
+}
+.filter__checkbox:checked {
+  background-color: #339933c5;
+  border-color: #339933;
 }

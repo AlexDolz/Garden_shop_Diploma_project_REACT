@@ -1,0 +1,44 @@
+.filter__wrapper {
+  padding-bottom: 34px;
+}
+.form {
+  display: flex;
+  align-items: center;
+}
+
+.filter__label {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 130%;
+  letter-spacing: 0.03em;
+  margin-right: 41px;
+  cursor: pointer;
+}
+.filter__label__discount {
+  margin-right: 91px;
+  gap: 39px;
+}
+.filter__label__sort {
+  margin-right: 0;
+  gap: 42px;
+}
+.filter__select {
+  width: 219px;
+  height: 40px;
+  border: 1px solid #000000;
+  border-radius: 7px;
+  outline: none;
+  padding: 9px 10px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 130%;
+  letter-spacing: 0.03em;
+  color: #797979;
+}
+.filter__select:focus {
+  box-shadow: 0 0 3px #339933 inset;
+  border-color: #339933;
+}

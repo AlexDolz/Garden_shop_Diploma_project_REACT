@@ -21,6 +21,10 @@
   margin-left: 20px;
   padding-top: 130px;
 }
+.head__texts__btn a {
+  width: 155px;
+  height: 82px;
+}
 .head__title {
   font-weight: 700;
   font-size: 80px;
@@ -32,6 +36,7 @@
   font-size: 63px;
   line-height: 130%;
   color: #ffffff;
+  padding-bottom: 60px;
 }
 
 .head__img {

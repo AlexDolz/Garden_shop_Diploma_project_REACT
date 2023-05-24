@@ -15,7 +15,7 @@ const HomePage = () => {
         <div className={s.categories__texts__btn}>
           <h2 className={s.categories__title}>Catalog</h2>
           <NavLink to={'/categoriesList'}>
-            <Button text='All categories' style='categories__btn' />
+            <Button text='All categories' className='categories__btn' />
           </NavLink>
         </div>
       </div>

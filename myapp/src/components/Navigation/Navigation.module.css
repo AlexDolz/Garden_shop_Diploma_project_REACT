@@ -11,6 +11,9 @@
   list-style: none;
 }
 .navigation ul li a {
+  padding-bottom: 20px;
+}
+.navigation ul li a {
   text-decoration: none;
   color: #000000;
   font-weight: 500;

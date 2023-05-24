@@ -13,7 +13,7 @@ const Header = () => {
           <img className={s.header__logo} src={header_logo} alt='header_logo' />
         </NavLink>
         <NavLink to={'/categoriesList'}>
-          <Button text='Catalog' style='header__btn' />
+          <Button text='Catalog' className='header__btn' />
         </NavLink>
       </div>
       <Navigation />

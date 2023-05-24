@@ -13,7 +13,7 @@ const Head = () => {
             <h1 className={s.head__title}>Sale</h1>
             <h2 className={s.head__subtitle}>New season</h2>
             <Link to='sale' smooth={true} duration={700}>
-              <Button text='Sale' style='head__btn' />
+              <Button text='Sale' className='head__btn' />
             </Link>
           </div>
           <img className={s.head__img} src={banner_img} alt='banner_img' />
