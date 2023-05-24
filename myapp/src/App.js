@@ -3,7 +3,7 @@ import './App.css';
 import Header from './components/Header/Header';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import HomePage from './pages/HomePage/HomePage';
-import ProductsListPage from './pages/ProductsListPage/ProductsListPage';
+import ProductListPage from './pages/ProductListPage/ProductListPage';
 import SalesPage from './pages/SalesPage/SalesPage';
 import ShoppingCartPage from './pages/ShoppingCartPage/ShoppingCartPage';
 import CategoriesListPage from './pages/CategoriesListPage/CategoriesListPage';
@@ -28,7 +28,7 @@ const App = () => {
       <main>
         <Routes>
           <Route path='/' element={<HomePage />} />
-          <Route path='/products' element={<ProductsListPage />} />
+          <Route path='/products' element={<ProductListPage />} />
           <Route path='/sales' element={<SalesPage />} />
           <Route path='/cart' element={<ShoppingCartPage />} />
           <Route path='/categoriesList' element={<CategoriesListPage />} />

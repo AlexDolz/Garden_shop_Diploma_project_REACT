@@ -1,21 +1,21 @@
 import React, { useEffect } from 'react';
-import s from './ProductsList.module.css';
+import s from './ProductList.module.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchProductsList } from '../../asynActions/requests';
+import { fetchProductList } from '../../asynActions/requests';
 import ProductItem from '../ProductItem/ProductItem';
 
-const ProductsList = ({ showAll }) => {
+const ProductList = ({ showAll }) => {
   const dispatch = useDispatch();
-  const productsList = useSelector(store => store.productsList);
+  const productList = useSelector(store => store.productList);
 
   useEffect(() => {
-    dispatch(fetchProductsList());
+    dispatch(fetchProductList());
   }, []);
 
-  let filteredProducts = productsList;
+  let filteredProducts = productList;
 
   if (!showAll) {
-    filteredProducts = productsList
+    filteredProducts = productList
       .filter(product => product.discont_price)
       .sort(() => Math.random() - 0.5)
       .slice(0, 4);
@@ -30,4 +30,4 @@ const ProductsList = ({ showAll }) => {
   );
 };
 
-export default ProductsList;
+export default ProductList;

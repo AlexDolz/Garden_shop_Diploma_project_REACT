@@ -1,5 +1,5 @@
 import { getCategoriesListAction } from '../store/Reducers/categoriesListReducer';
-import { getProductsListAction } from '../store/Reducers/productsListReducer';
+import { getProductListAction } from '../store/Reducers/productListReducer';
 
 const backEndUrl = 'http://localhost:3333';
 
@@ -13,13 +13,13 @@ export const fetchCategoriesList = () => {
   };
 };
 
-const productsListUrl = `${backEndUrl}/products/all`;
+const productListUrl = `${backEndUrl}/products/all`;
 
-export const fetchProductsList = () => {
+export const fetchProductList = () => {
   return function (dispatch) {
-    fetch(productsListUrl)
+    fetch(productListUrl)
       .then(res => res.json())
-      .then(data => dispatch(getProductsListAction(data)));
+      .then(data => dispatch(getProductListAction(data)));
   };
 };
 

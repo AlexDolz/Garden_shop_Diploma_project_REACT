@@ -1,6 +1,6 @@
 import React from 'react';
 import s from './Sale.module.css';
-import ProductsList from '../ProductsList/ProductsList';
+import ProductList from '../ProductList/ProductList';
 
 const Sale = () => {
   return (
@@ -8,7 +8,7 @@ const Sale = () => {
       <h2 className={s.sale__title} id='sale'>
         Sale
       </h2>
-      <ProductsList />
+      <ProductList />
     </div>
   );
 };

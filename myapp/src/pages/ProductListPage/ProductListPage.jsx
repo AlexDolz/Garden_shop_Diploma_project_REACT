@@ -1,18 +1,18 @@
 import React from 'react';
-import s from './ProductsListPage.module.css';
-import ProductsList from '../../components/ProductsList/ProductsList';
+import s from './ProductListPage.module.css';
+import ProductList from '../../components/ProductList/ProductList';
 
-const ProductsListPage = () => {
+const ProductListPage = () => {
   return (
     <div>
       <div className='container'>
         <h2 className={s.products__list__title}>All Products</h2>
       </div>
       <div className='container'>
-        <ProductsList showAll />
+        <ProductList showAll />
       </div>
     </div>
   );
 };
 
-export default ProductsListPage;
+export default ProductListPage;

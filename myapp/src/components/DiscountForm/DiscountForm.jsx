@@ -13,6 +13,7 @@ const DiscountForm = () => {
       number: number.value,
     };
     discountRequest(discount);
+    event.target.reset();
   };
 
   return (
