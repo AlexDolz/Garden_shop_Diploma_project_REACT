@@ -1,8 +1,12 @@
 import React from 'react';
 import s from './Filter.module.css';
 import Input from '../UI/Input/Input';
+import { useDispatch } from 'react-redux';
+import { filterProductsBySaleAction } from '../../store/Reducers/productListReducer';
 
 const Filter = () => {
+  const dispatch = useDispatch();
+
   return (
     <div className={s.filter__wrapper}>
       <form className={s.form}>
@@ -23,7 +27,13 @@ const Filter = () => {
         </label>
         <label className={`${s.filter__label} ${s.filter__label__discount}`}>
           Discounted items
-          <Input type='checkbox' className='filter__checkbox' />
+          <Input
+            onClick={event =>
+              dispatch(filterProductsBySaleAction(event.target.checked))
+            }
+            type='checkbox'
+            className='filter__checkbox'
+          />
         </label>
         <label className={`${s.filter__label} ${s.filter__label__sort}`}>
           Sorted

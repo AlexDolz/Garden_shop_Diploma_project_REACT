@@ -6,7 +6,9 @@ import ProductItem from '../ProductItem/ProductItem';
 
 const ProductList = ({ showAll }) => {
   const dispatch = useDispatch();
-  const productList = useSelector(store => store.productList);
+  const productList = useSelector(store => store.productList).filter(
+    elem => elem.showBySale
+  );
 
   useEffect(() => {
     dispatch(fetchProductList());

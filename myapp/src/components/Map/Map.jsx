@@ -4,7 +4,7 @@ import s from './Map.module.css';
 const Map = () => {
   return (
     <div className={s.map__wrapper}>
-      <div style={{ width: '100%' }}>
+      <div className={s.map}>
         <iframe
           title='googleMaps'
           width='100%'

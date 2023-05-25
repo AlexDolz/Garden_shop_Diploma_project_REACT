@@ -61,11 +61,12 @@
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
+  cursor: pointer;
   width: 40px;
   height: 40px;
   border: 1px solid #000000;
   border-radius: 7px;
-  transition: background-color 0.2s, border-color 0.3s;
+  transition: background-color 0.1s ease, border-color 0.3s ease;
 }
 .filter__checkbox:checked {
   background-color: #339933c5;

@@ -1,5 +1,8 @@
 import { getCategoriesListAction } from '../store/Reducers/categoriesListReducer';
-import { getProductListAction } from '../store/Reducers/productListReducer';
+import {
+  getProductListAction,
+  // getProductListPageProductsAction,
+} from '../store/Reducers/productListReducer';
 
 const backEndUrl = 'http://localhost:3333';
 
@@ -23,10 +26,17 @@ export const fetchProductList = () => {
   };
 };
 
+// export const fetchProductListPage = () => {
+//   return function (dispatch) {
+//     fetch(productListUrl)
+//       .then(res => res.json())
+//       .then(data => dispatch(getProductListPageProductsAction(data)));
+//   };
+// };
+
 const getDiscountUrl = `${backEndUrl}/sale/send`;
 
 export const discountRequest = discount => {
-  // console.log(discount);
   fetch(getDiscountUrl, {
     method: 'POST',
     headers: {

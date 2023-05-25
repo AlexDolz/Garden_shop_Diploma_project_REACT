@@ -16,6 +16,7 @@
   letter-spacing: 0.03em;
   margin-right: 41px;
   cursor: pointer;
+  user-select: none;
 }
 .filter__label__discount {
   margin-right: 91px;
