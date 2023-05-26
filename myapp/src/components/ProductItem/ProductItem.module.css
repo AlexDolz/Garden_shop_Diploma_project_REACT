@@ -30,7 +30,7 @@
   max-width: 300px;
   padding-bottom: 13px;
 }
-.product__current__price {
+.product__discount__price {
   font-weight: 600;
   font-size: 30px;
   line-height: 130%;
@@ -38,7 +38,7 @@
   color: #000000;
 }
 
-.product__discount__price {
+.product__old__price {
   font-weight: 500;
   font-size: 20px;
   line-height: 130%;

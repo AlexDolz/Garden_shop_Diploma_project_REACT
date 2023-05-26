@@ -3,10 +3,10 @@ import s from './ProductListPage.module.css';
 import ProductList from '../../components/ProductList/ProductList';
 import Filter from '../../components/Filter/Filter';
 // import { fetchProductListPage } from '../../asynActions/requests';
-import { useDispatch } from 'react-redux';
+// import { useDispatch } from 'react-redux';
 
 const ProductListPage = () => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   // useEffect(() => {
   //   dispatch(fetchProductListPage());

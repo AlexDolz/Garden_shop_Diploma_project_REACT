@@ -2,7 +2,10 @@ import React from 'react';
 import s from './Filter.module.css';
 import Input from '../UI/Input/Input';
 import { useDispatch } from 'react-redux';
-import { filterProductsBySaleAction } from '../../store/Reducers/productListReducer';
+import {
+  filterProductsBySaleAction,
+  sortProductsAction,
+} from '../../store/Reducers/productListReducer';
 
 const Filter = () => {
   const dispatch = useDispatch();
@@ -37,10 +40,14 @@ const Filter = () => {
         </label>
         <label className={`${s.filter__label} ${s.filter__label__sort}`}>
           Sorted
-          <select name='sort' className={s.filter__select}>
-            <option value=''>by default</option>
-            <option value='0'>by title</option>
-            <option value='1'>by price</option>
+          <select
+            onChange={event => dispatch(sortProductsAction(event.target.value))}
+            className={s.filter__select}
+          >
+            <option value='default'>by default</option>
+            <option value='title'>by title</option>
+            <option value='ascending_price'>by ascending price</option>
+            <option value='descending_price'>by descending price</option>
           </select>
         </label>
       </form>

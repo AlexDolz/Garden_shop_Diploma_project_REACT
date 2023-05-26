@@ -38,6 +38,7 @@
   line-height: 130%;
   letter-spacing: 0.03em;
   color: #797979;
+  cursor: pointer;
 }
 .filter__select:focus {
   box-shadow: 0 0 3px #339933 inset;

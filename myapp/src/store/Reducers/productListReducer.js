@@ -3,6 +3,7 @@ const defaultState = [];
 const GET_PRODUCT_LIST = 'GET_PRODUCT_LIST';
 const FILTER_PRODUCTS_BY_SALE = 'FILTER_PRODUCTS_BY_SALE';
 // const GET_PRODUCT_LIST_PAGE_PRODUCTS = 'GET_PRODUCT_LIST_PAGE_PRODUCTS';
+const SORT_PRODUCTS = 'SORT_PRODUCTS';
 
 export const productListReducer = (state = defaultState, action) => {
   switch (action.type) {
@@ -28,6 +29,29 @@ export const productListReducer = (state = defaultState, action) => {
         return state.map(elem => ({ ...elem, showBySale: true }));
       }
 
+    case SORT_PRODUCTS:
+      let sortedState = [...state];
+      if (action.payload === 'title') {
+        sortedState.sort((a, b) =>
+          a[action.payload].localeCompare(b[action.payload])
+        );
+      } else if (action.payload === 'ascending_price') {
+        sortedState.sort((a, b) => {
+          const priceA = a.discont_price || a.price;
+          const priceB = b.discont_price || b.price;
+          return priceA - priceB;
+        });
+      } else if (action.payload === 'descending_price') {
+        sortedState.sort((a, b) => {
+          const priceA = a.discont_price || a.price;
+          const priceB = b.discont_price || b.price;
+          return priceB - priceA;
+        });
+      } else if (action.payload === 'default') {
+        return sortedState.sort((a, b) => a.id - b.id);
+      }
+      return sortedState;
+
     default:
       return state;
   }
@@ -45,3 +69,7 @@ export const filterProductsBySaleAction = payload => ({
 //   type: GET_PRODUCT_LIST_PAGE_PRODUCTS,
 //   payload,
 // });
+export const sortProductsAction = payload => ({
+  type: SORT_PRODUCTS,
+  payload,
+});
