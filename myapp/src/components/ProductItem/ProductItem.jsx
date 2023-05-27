@@ -23,14 +23,20 @@ const ProductItem = ({ image, price, discont_price, title }) => {
       <div className={s.product__price__wrapper}>
         {discont_price ? (
           <>
-            <p className={s.product__discount__price}>{discont_price}$</p>
+            <p className={s.product__discount__price}>
+              {discont_price}
+              <span className={s.product__discount__price_span}>$</span>
+            </p>
             <p className={s.product__old__price}>{price}$</p>
             <p className={s.product__discount__percentage}>
               -{discountPercentage}%
             </p>
           </>
         ) : (
-          <p className={s.product__discount__price}>{price}$</p>
+          <p className={s.product__discount__price}>
+            {price}
+            <span className={s.product__discount__price_span}>$</span>
+          </p>
         )}
       </div>
       <h3 className={s.product__title}>{title}</h3>

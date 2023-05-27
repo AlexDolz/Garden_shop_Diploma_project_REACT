@@ -4,6 +4,7 @@ const GET_PRODUCT_LIST = 'GET_PRODUCT_LIST';
 const FILTER_PRODUCTS_BY_SALE = 'FILTER_PRODUCTS_BY_SALE';
 // const GET_PRODUCT_LIST_PAGE_PRODUCTS = 'GET_PRODUCT_LIST_PAGE_PRODUCTS';
 const SORT_PRODUCTS = 'SORT_PRODUCTS';
+const SORT_BY_RANGE = 'SORT_BY_RANGE';
 
 export const productListReducer = (state = defaultState, action) => {
   switch (action.type) {
@@ -11,6 +12,7 @@ export const productListReducer = (state = defaultState, action) => {
       const newState = action.payload.map(elem => ({
         ...elem,
         showBySale: true,
+        rangeActive: true,
       }));
       return newState;
 
@@ -52,6 +54,20 @@ export const productListReducer = (state = defaultState, action) => {
       }
       return sortedState;
 
+    case SORT_BY_RANGE:
+      const { from, to } = action.payload;
+
+      return state.map(elem => ({
+        ...elem,
+        rangeActive:
+          from === '' || to === ''
+            ? true
+            : (elem.discont_price &&
+                elem.discont_price >= from &&
+                elem.discont_price <= to) ||
+              (elem.price && elem.price >= from && elem.price <= to),
+      }));
+
     default:
       return state;
   }
@@ -71,5 +87,9 @@ export const filterProductsBySaleAction = payload => ({
 // });
 export const sortProductsAction = payload => ({
   type: SORT_PRODUCTS,
+  payload,
+});
+export const sortByRangeAction = payload => ({
+  type: SORT_BY_RANGE,
   payload,
 });

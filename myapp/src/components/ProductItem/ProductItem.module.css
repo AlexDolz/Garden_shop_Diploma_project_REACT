@@ -35,7 +35,9 @@
   font-size: 30px;
   line-height: 130%;
   letter-spacing: 0.03em;
-  color: #000000;
+}
+.product__discount__price_span {
+  font-size: 20px;
 }
 
 .product__old__price {

@@ -1,14 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
 import s from './Filter.module.css';
 import Input from '../UI/Input/Input';
 import { useDispatch } from 'react-redux';
 import {
   filterProductsBySaleAction,
+  sortByRangeAction,
   sortProductsAction,
 } from '../../store/Reducers/productListReducer';
 
 const Filter = () => {
+  const [range, setRange] = useState({});
+  const { from = '', to = '' } = range;
+
   const dispatch = useDispatch();
+
+  const handlePriceRange = event => {
+    const targetInput = event.target.name;
+    const updatedValue = event.target.value.replace(',', '.');
+
+    if (!isNaN(updatedValue)) {
+      setRange(previousRange => ({
+        ...previousRange,
+        [targetInput]: updatedValue,
+      }));
+
+      const newRange = {
+        from: targetInput === 'from' ? updatedValue : from || -Infinity,
+        to: targetInput === 'to' ? updatedValue : to || Infinity,
+      };
+      dispatch(sortByRangeAction(newRange));
+    }
+  };
 
   return (
     <div className={s.filter__wrapper}>
@@ -20,12 +42,14 @@ const Filter = () => {
             placeholder='from'
             className='filter__input'
             name='from'
+            onChange={handlePriceRange}
           />
           <Input
             type='number'
             placeholder='to'
             className='filter__input'
             name='to'
+            onChange={handlePriceRange}
           />
         </label>
         <label className={`${s.filter__label} ${s.filter__label__discount}`}>
