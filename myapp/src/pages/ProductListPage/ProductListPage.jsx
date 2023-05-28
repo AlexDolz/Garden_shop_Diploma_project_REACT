@@ -14,8 +14,8 @@ const ProductListPage = () => {
   return (
     <div>
       <div className='container'>
-        <h2 className={s.products__list__title}>All Products</h2>
-        <Filter />
+        <h2 className={s.products__page__title}>All Products</h2>
+        <Filter page='productListPage' />
       </div>
       <div className='container'>
         <ProductList showAll />

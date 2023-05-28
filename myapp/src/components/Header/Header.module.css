@@ -17,4 +17,8 @@
   width: 72px;
   height: 72px;
   cursor: pointer;
+  position: relative;
+}
+.header__logo:active {
+  top: 1px;
 }

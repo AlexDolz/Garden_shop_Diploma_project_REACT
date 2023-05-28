@@ -73,10 +73,10 @@
   color: #3a3a3a;
 }
 .address a:hover {
-  color: rgb(12, 12, 173);
+  color: #339933;
 }
 .address a:active {
-  color: #339933;
+  color: rgb(12, 12, 173);
 }
 
 .address__subtitle {

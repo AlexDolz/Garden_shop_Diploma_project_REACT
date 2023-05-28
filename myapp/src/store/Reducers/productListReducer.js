@@ -67,6 +67,7 @@ export const productListReducer = (state = defaultState, action) => {
                 elem.discont_price <= to) ||
               (elem.price && elem.price >= from && elem.price <= to),
       }));
+    // How to sort in range? by price or by discount price or both? !!!
 
     default:
       return state;

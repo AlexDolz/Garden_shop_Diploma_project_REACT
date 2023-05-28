@@ -8,7 +8,7 @@ import {
   sortProductsAction,
 } from '../../store/Reducers/productListReducer';
 
-const Filter = () => {
+const Filter = ({ page }) => {
   const [range, setRange] = useState({});
   const { from = '', to = '' } = range;
 
@@ -18,24 +18,27 @@ const Filter = () => {
     const targetInput = event.target.name;
     const updatedValue = event.target.value.replace(',', '.');
 
-    if (!isNaN(updatedValue)) {
-      setRange(previousRange => ({
-        ...previousRange,
-        [targetInput]: updatedValue,
-      }));
+    // if (!isNaN(updatedValue)) {
+    setRange(previousRange => ({
+      ...previousRange,
+      [targetInput]: updatedValue,
+    }));
 
-      const newRange = {
-        from: targetInput === 'from' ? updatedValue : from || -Infinity,
-        to: targetInput === 'to' ? updatedValue : to || Infinity,
-      };
-      dispatch(sortByRangeAction(newRange));
-    }
+    const newRange = {
+      from: targetInput === 'from' ? updatedValue : from || -Infinity,
+      to: targetInput === 'to' ? updatedValue : to || Infinity,
+    };
+    dispatch(sortByRangeAction(newRange));
+    // }
   };
 
   return (
     <div className={s.filter__wrapper}>
       <form className={s.form}>
-        <label className={s.filter__label}>
+        <label
+          className={s.filter__label}
+          style={page === 'salesPage' ? { marginRight: '68px' } : {}}
+        >
           Price
           <Input
             type='number'
@@ -52,16 +55,18 @@ const Filter = () => {
             onChange={handlePriceRange}
           />
         </label>
-        <label className={`${s.filter__label} ${s.filter__label__discount}`}>
-          Discounted items
-          <Input
-            onClick={event =>
-              dispatch(filterProductsBySaleAction(event.target.checked))
-            }
-            type='checkbox'
-            className='filter__checkbox'
-          />
-        </label>
+        {page === 'productListPage' && (
+          <label className={`${s.filter__label} ${s.filter__label__discount}`}>
+            Discounted items
+            <Input
+              onClick={event =>
+                dispatch(filterProductsBySaleAction(event.target.checked))
+              }
+              type='checkbox'
+              className='filter__checkbox'
+            />
+          </label>
+        )}
         <label className={`${s.filter__label} ${s.filter__label__sort}`}>
           Sorted
           <select
