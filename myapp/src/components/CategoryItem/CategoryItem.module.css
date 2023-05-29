@@ -1,6 +1,5 @@
 .category__item {
   cursor: pointer;
-  /* To add forward on categoriesPage onclick */
 }
 
 .category__img__wrapper {
@@ -30,4 +29,8 @@
   letter-spacing: 0.03em;
   color: #000000;
   text-align: center;
+  text-decoration: none;
+}
+.category__item a {
+  text-decoration: none;
 }

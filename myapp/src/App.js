@@ -8,6 +8,7 @@ import SalesPage from './pages/SalesPage/SalesPage';
 import ShoppingCartPage from './pages/ShoppingCartPage/ShoppingCartPage';
 import CategoriesListPage from './pages/CategoriesListPage/CategoriesListPage';
 import Footer from './components/Footer/Footer';
+import CategoryItemProductsPage from './pages/CategoryItemProductsPage/CategoryItemProductsPage';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -31,7 +32,11 @@ const App = () => {
           <Route path='/products' element={<ProductListPage />} />
           <Route path='/sales' element={<SalesPage />} />
           <Route path='/cart' element={<ShoppingCartPage />} />
-          <Route path='/categoriesList' element={<CategoriesListPage />} />
+          <Route path='/categories' element={<CategoriesListPage />} />
+          <Route
+            path='/categories/:id'
+            element={<CategoryItemProductsPage />}
+          />
         </Routes>
       </main>
       <Footer />

@@ -13,8 +13,8 @@ const HomePage = () => {
       <Head />
       <div className='container'>
         <div className={s.categories__texts__btn}>
-          <h2 className={s.categories__title}>Catalog</h2>
-          <NavLink to={'/categoriesList'}>
+          <h2 className={s.categories__section__title}>Catalog</h2>
+          <NavLink to={'/categories'}>
             <Button text='All categories' className='categories__btn' />
           </NavLink>
         </div>

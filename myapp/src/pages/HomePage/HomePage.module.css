@@ -4,10 +4,9 @@
   gap: 96px;
   padding-bottom: 20px;
 }
-.categories__title {
+.categories__section__title {
   font-weight: 700;
   font-size: 40px;
   line-height: 130%;
   letter-spacing: 0.03em;
-  color: #000000;
 }

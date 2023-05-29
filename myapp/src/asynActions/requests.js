@@ -1,4 +1,5 @@
 import { getCategoriesListAction } from '../store/Reducers/categoriesListReducer';
+import { getCategoryItemProductsAction } from '../store/Reducers/categoryItemReduce';
 import {
   getProductListAction,
   // getProductListPageProductsAction,
@@ -47,4 +48,14 @@ export const discountRequest = discount => {
     .then(res => res.json())
     .then(data => console.log(data));
   console.log(discount);
+};
+
+const categoryItemProductsUrl = `${backEndUrl}/categories/`;
+
+export const fetchCategoryItemProducts = id => {
+  return function (dispatch) {
+    fetch(`${categoryItemProductsUrl}${id}`)
+      .then(res => res.json())
+      .then(data => dispatch(getCategoryItemProductsAction(data)));
+  };
 };
