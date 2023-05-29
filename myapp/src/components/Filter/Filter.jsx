@@ -12,6 +12,27 @@ const Filter = ({ page }) => {
   const [range, setRange] = useState({});
   const { from = '', to = '' } = range;
 
+  const handleKeyDown = event => {
+    const allowedKeys = [
+      '0',
+      '1',
+      '2',
+      '3',
+      '4',
+      '5',
+      '6',
+      '7',
+      '8',
+      '9',
+      'Backspace',
+      'Tab',
+    ];
+
+    if (!allowedKeys.includes(event.key)) {
+      event.preventDefault();
+    }
+  };
+
   const dispatch = useDispatch();
 
   const handlePriceRange = event => {
@@ -41,18 +62,20 @@ const Filter = ({ page }) => {
         >
           Price
           <Input
-            type='number'
+            type='text'
             placeholder='from'
             className='filter__input'
             name='from'
             onChange={handlePriceRange}
+            onKeyDown={handleKeyDown}
           />
           <Input
-            type='number'
+            type='text'
             placeholder='to'
             className='filter__input'
             name='to'
             onChange={handlePriceRange}
+            onKeyDown={handleKeyDown}
           />
         </label>
         {page === 'productListPage' && (

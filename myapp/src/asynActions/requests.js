@@ -46,4 +46,5 @@ export const discountRequest = discount => {
   })
     .then(res => res.json())
     .then(data => console.log(data));
+  console.log(discount);
 };

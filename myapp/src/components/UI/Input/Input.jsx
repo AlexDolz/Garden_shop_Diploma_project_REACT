@@ -2,7 +2,15 @@ import React from 'react';
 import classNames from 'classnames';
 import s from './Input.module.css';
 
-const Input = ({ placeholder, className, name, type, onClick, onChange }) => {
+const Input = ({
+  placeholder,
+  className,
+  name,
+  type,
+  onClick,
+  onChange,
+  onKeyDown,
+}) => {
   const inputClasses = classNames({
     [s.discount__input]: className === 'discount__input',
     [s.filter__input]: className === 'filter__input',
@@ -17,6 +25,7 @@ const Input = ({ placeholder, className, name, type, onClick, onChange }) => {
       name={name}
       onClick={onClick}
       onChange={onChange}
+      onKeyDown={onKeyDown}
     />
   );
 };
