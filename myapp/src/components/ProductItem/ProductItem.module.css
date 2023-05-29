@@ -30,6 +30,10 @@
   max-width: 300px;
   padding-bottom: 13px;
 }
+.align__start {
+  justify-content: flex-start;
+  margin-left: 25px;
+}
 .product__discount__price {
   font-weight: 600;
   font-size: 30px;

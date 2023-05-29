@@ -20,7 +20,11 @@ const ProductItem = ({ image, price, discont_price, title }) => {
           <Button text='Add to cart' className='add__to__cart__btn' />
         </div>
       </div>
-      <div className={s.product__price__wrapper}>
+      <div
+        className={`${s.product__price__wrapper} ${
+          discont_price ? '' : s.align__start
+        }`}
+      >
         {discont_price ? (
           <>
             <p className={s.product__discount__price}>
