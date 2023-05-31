@@ -1,8 +1,8 @@
 import s from './ProductItem.module.css';
 import Button from '../UI/Button/Button';
+import { rootUrl } from '../..';
 
 const ProductItem = ({ image, price, discont_price, title }) => {
-  const backEndUrl = 'http://localhost:3333';
   const discountPercentage = Math.round(
     ((price - discont_price) / price) * 100
   );
@@ -12,7 +12,7 @@ const ProductItem = ({ image, price, discont_price, title }) => {
       <div className={s.product__img__wrapper}>
         <img
           className={s.product__img}
-          src={`${backEndUrl}${image}`}
+          src={`${rootUrl}${image}`}
           alt={title}
         />
         {/* addToCartButton onclick{handleAddToCart} to make! */}

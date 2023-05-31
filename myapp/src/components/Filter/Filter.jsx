@@ -7,6 +7,10 @@ import {
   sortByRangeAction,
   sortProductsAction,
 } from '../../store/Reducers/productListReducer';
+import {
+  filterCategoryItemProductsBySaleAction,
+  sortCategoryItemProducts,
+} from '../../store/Reducers/categoryItemReduce';
 
 const Filter = ({ page }) => {
   const [range, setRange] = useState({});
@@ -26,6 +30,7 @@ const Filter = ({ page }) => {
       '9',
       'Backspace',
       'Tab',
+      '.',
     ];
 
     if (!allowedKeys.includes(event.key)) {
@@ -37,9 +42,8 @@ const Filter = ({ page }) => {
 
   const handlePriceRange = event => {
     const targetInput = event.target.name;
-    const updatedValue = event.target.value.replace(',', '.');
+    const updatedValue = event.target.value;
 
-    // if (!isNaN(updatedValue)) {
     setRange(previousRange => ({
       ...previousRange,
       [targetInput]: updatedValue,
@@ -50,7 +54,6 @@ const Filter = ({ page }) => {
       to: targetInput === 'to' ? updatedValue : to || Infinity,
     };
     dispatch(sortByRangeAction(newRange));
-    // }
   };
 
   return (
@@ -82,9 +85,12 @@ const Filter = ({ page }) => {
           <label className={`${s.filter__label} ${s.filter__label__discount}`}>
             Discounted items
             <Input
-              onClick={event =>
-                dispatch(filterProductsBySaleAction(event.target.checked))
-              }
+              onClick={event => {
+                dispatch(filterProductsBySaleAction(event.target.checked));
+                // dispatch(
+                //   filterCategoryItemProductsBySaleAction(event.target.checked)
+                // );
+              }}
               type='checkbox'
               className='filter__checkbox'
             />
@@ -93,7 +99,10 @@ const Filter = ({ page }) => {
         <label className={`${s.filter__label} ${s.filter__label__sort}`}>
           Sorted
           <select
-            onChange={event => dispatch(sortProductsAction(event.target.value))}
+            onChange={event => {
+              dispatch(sortProductsAction(event.target.value));
+              // dispatch(sortCategoryItemProducts(event.target.value));
+            }}
             className={s.filter__select}
           >
             <option value='default'>by default</option>

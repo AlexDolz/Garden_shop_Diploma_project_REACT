@@ -1,3 +1,4 @@
+import { rootUrl } from '..';
 import { getCategoriesListAction } from '../store/Reducers/categoriesListReducer';
 import { getCategoryItemProductsAction } from '../store/Reducers/categoryItemReduce';
 import {
@@ -5,9 +6,7 @@ import {
   // getProductListPageProductsAction,
 } from '../store/Reducers/productListReducer';
 
-const backEndUrl = 'http://localhost:3333';
-
-const categoriesListUrl = `${backEndUrl}/categories/all`;
+const categoriesListUrl = `${rootUrl}/categories/all`;
 
 export const fetchCategoriesList = () => {
   return function (dispatch) {
@@ -17,7 +16,7 @@ export const fetchCategoriesList = () => {
   };
 };
 
-const productListUrl = `${backEndUrl}/products/all`;
+const productListUrl = `${rootUrl}/products/all`;
 
 export const fetchProductList = () => {
   return function (dispatch) {
@@ -27,15 +26,7 @@ export const fetchProductList = () => {
   };
 };
 
-// export const fetchProductListPage = () => {
-//   return function (dispatch) {
-//     fetch(productListUrl)
-//       .then(res => res.json())
-//       .then(data => dispatch(getProductListPageProductsAction(data)));
-//   };
-// };
-
-const getDiscountUrl = `${backEndUrl}/sale/send`;
+const getDiscountUrl = `${rootUrl}/sale/send`;
 
 export const discountRequest = discount => {
   fetch(getDiscountUrl, {
@@ -50,7 +41,7 @@ export const discountRequest = discount => {
   console.log(discount);
 };
 
-const categoryItemProductsUrl = `${backEndUrl}/categories/`;
+const categoryItemProductsUrl = `${rootUrl}/categories/`;
 
 export const fetchCategoryItemProducts = id => {
   return function (dispatch) {

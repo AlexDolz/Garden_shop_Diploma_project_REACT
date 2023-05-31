@@ -2,7 +2,6 @@ const defaultState = [];
 
 const GET_PRODUCT_LIST = 'GET_PRODUCT_LIST';
 const FILTER_PRODUCTS_BY_SALE = 'FILTER_PRODUCTS_BY_SALE';
-// const GET_PRODUCT_LIST_PAGE_PRODUCTS = 'GET_PRODUCT_LIST_PAGE_PRODUCTS';
 const SORT_PRODUCTS = 'SORT_PRODUCTS';
 const SORT_BY_RANGE = 'SORT_BY_RANGE';
 
@@ -15,9 +14,6 @@ export const productListReducer = (state = defaultState, action) => {
         rangeActive: true,
       }));
       return newState;
-
-    // case GET_PRODUCT_LIST_PAGE_PRODUCTS:
-    //   return [...state, ...action.payload];
 
     case FILTER_PRODUCTS_BY_SALE:
       if (action.payload) {
@@ -57,17 +53,18 @@ export const productListReducer = (state = defaultState, action) => {
     case SORT_BY_RANGE:
       const { from, to } = action.payload;
 
-      return state.map(elem => ({
-        ...elem,
-        rangeActive:
-          from === '' || to === ''
-            ? true
-            : (elem.discont_price &&
-                elem.discont_price >= from &&
-                elem.discont_price <= to) ||
-              (elem.price && elem.price >= from && elem.price <= to),
-      }));
-    // How to sort in range? by price or by discount price or both? !!!
+      const hasFrom = from !== '';
+      const hasTo = to !== '';
+
+      return state.map(elem => {
+        const price = elem.discont_price || elem.price;
+        const isInRange =
+          (!hasFrom || price >= +from) && (!hasTo || price <= +to);
+        return {
+          ...elem,
+          rangeActive: isInRange,
+        };
+      });
 
     default:
       return state;
@@ -82,10 +79,6 @@ export const filterProductsBySaleAction = payload => ({
   type: FILTER_PRODUCTS_BY_SALE,
   payload,
 });
-// export const getProductListPageProductsAction = payload => ({
-//   type: GET_PRODUCT_LIST_PAGE_PRODUCTS,
-//   payload,
-// });
 export const sortProductsAction = payload => ({
   type: SORT_PRODUCTS,
   payload,
