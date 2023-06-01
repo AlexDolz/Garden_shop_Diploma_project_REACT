@@ -1,9 +1,9 @@
 import React from 'react';
 import s from './CategoryItem.module.css';
 import { NavLink } from 'react-router-dom';
-import { rootUrl } from '../..';
 
 const CategoryItem = ({ image, title, id }) => {
+  const rootUrl = 'http://localhost:3333';
   return (
     <div className={s.category__item}>
       <NavLink to={`/categories/${id}`}>

@@ -3,7 +3,8 @@ import s from './CategoryItemProductsPage.module.css';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCategoryItemProducts } from '../../asynActions/requests';
-import CategoryItemProductList from '../../components/CategoryItemProductList/CategoryItemProductList';
+import ProductList from '../../components/ProductList/ProductList';
+import Filter from '../../components/Filter/Filter';
 
 const CategoryItemProductsPage = () => {
   const { id } = useParams();
@@ -25,7 +26,8 @@ const CategoryItemProductsPage = () => {
     <div>
       <div className='container'>
         <h2 className={s.category__products__section__title}>{title}</h2>
-        <CategoryItemProductList categoryProducts={categoryProducts} />
+        <Filter filter='allFilters' />
+        <ProductList categoryProducts={categoryProducts} showAll />
       </div>
     </div>
   );

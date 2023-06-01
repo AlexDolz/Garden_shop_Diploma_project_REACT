@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchProductList } from '../../asynActions/requests';
 import ProductItem from '../ProductItem/ProductItem';
 
-const ProductList = ({ showAll, showAllSale }) => {
+const ProductList = ({ categoryProducts, showAll, showAllSale }) => {
   const dispatch = useDispatch();
   const productList = useSelector(store =>
     store.productList?.filter(elem => elem.showBySale && elem.rangeActive)
@@ -14,7 +14,7 @@ const ProductList = ({ showAll, showAllSale }) => {
     dispatch(fetchProductList());
   }, []);
 
-  let filteredProducts = productList;
+  let filteredProducts = categoryProducts || productList;
 
   if (!showAll) {
     filteredProducts = productList
@@ -26,6 +26,9 @@ const ProductList = ({ showAll, showAllSale }) => {
     filteredProducts = productList.filter(elem => elem.discont_price);
   }
 
+  // if (products.length === 0) {
+  //   return <NotFoundPage/>
+  // }
   return (
     <div className={s.products__list}>
       {filteredProducts.map((elem, index) => (

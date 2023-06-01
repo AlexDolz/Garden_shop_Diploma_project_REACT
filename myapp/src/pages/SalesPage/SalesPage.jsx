@@ -8,7 +8,7 @@ const SalesPage = () => {
     <div>
       <div className='container'>
         <h2 className={s.sales__page__title}>Products with sale</h2>
-        <Filter page='salesPage' />
+        <Filter filter='notAllFilters' />
       </div>
       <div className='container'>
         <ProductList showAllSale />

@@ -12,7 +12,7 @@ import {
   sortCategoryItemProducts,
 } from '../../store/Reducers/categoryItemReduce';
 
-const Filter = ({ page }) => {
+const Filter = ({ filter }) => {
   const [range, setRange] = useState({});
   const { from = '', to = '' } = range;
 
@@ -61,7 +61,7 @@ const Filter = ({ page }) => {
       <form className={s.form}>
         <label
           className={s.filter__label}
-          style={page === 'salesPage' ? { marginRight: '68px' } : {}}
+          style={filter === 'notAllFilters' ? { marginRight: '68px' } : {}}
         >
           Price
           <Input
@@ -81,7 +81,7 @@ const Filter = ({ page }) => {
             onKeyDown={handleKeyDown}
           />
         </label>
-        {page === 'productListPage' && (
+        {filter === 'allFilters' && (
           <label className={`${s.filter__label} ${s.filter__label__discount}`}>
             Discounted items
             <Input
@@ -106,7 +106,8 @@ const Filter = ({ page }) => {
             className={s.filter__select}
           >
             <option value='default'>by default</option>
-            <option value='title'>by title</option>
+            <option value='title_a_z'>by title a-z</option>
+            <option value='title_z_a'>by title z-a</option>
             <option value='ascending_price'>by ascending price</option>
             <option value='descending_price'>by descending price</option>
           </select>

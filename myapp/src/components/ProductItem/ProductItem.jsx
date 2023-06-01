@@ -1,8 +1,9 @@
 import s from './ProductItem.module.css';
 import Button from '../UI/Button/Button';
-import { rootUrl } from '../..';
 
 const ProductItem = ({ image, price, discont_price, title }) => {
+  const rootUrl = 'http://localhost:3333';
+
   const discountPercentage = Math.round(
     ((price - discont_price) / price) * 100
   );

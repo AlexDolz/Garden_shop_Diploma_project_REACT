@@ -1,10 +1,11 @@
-import { rootUrl } from '..';
 import { getCategoriesListAction } from '../store/Reducers/categoriesListReducer';
 import { getCategoryItemProductsAction } from '../store/Reducers/categoryItemReduce';
 import {
   getProductListAction,
   // getProductListPageProductsAction,
 } from '../store/Reducers/productListReducer';
+
+const rootUrl = 'http://localhost:3333';
 
 const categoriesListUrl = `${rootUrl}/categories/all`;
 

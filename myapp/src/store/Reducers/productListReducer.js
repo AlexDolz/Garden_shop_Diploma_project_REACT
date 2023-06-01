@@ -29,10 +29,10 @@ export const productListReducer = (state = defaultState, action) => {
 
     case SORT_PRODUCTS:
       let sortedState = [...state];
-      if (action.payload === 'title') {
-        sortedState.sort((a, b) =>
-          a[action.payload].localeCompare(b[action.payload])
-        );
+      if (action.payload === 'title_a_z') {
+        sortedState.sort((a, b) => a.title.localeCompare(b.title));
+      } else if (action.payload === 'title_z_a') {
+        sortedState.sort((a, b) => b.title.localeCompare(a.title));
       } else if (action.payload === 'ascending_price') {
         sortedState.sort((a, b) => {
           const priceA = a.discont_price || a.price;
