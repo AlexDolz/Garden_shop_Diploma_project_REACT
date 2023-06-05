@@ -9,6 +9,7 @@ import ShoppingCartPage from './pages/ShoppingCartPage/ShoppingCartPage';
 import CategoriesListPage from './pages/CategoriesListPage/CategoriesListPage';
 import Footer from './components/Footer/Footer';
 import CategoryItemProductsPage from './pages/CategoryItemProductsPage/CategoryItemProductsPage';
+import ProductInfoPage from './pages/ProductInfoPage/ProductInfoPage';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -37,6 +38,7 @@ const App = () => {
             path='/categories/:id'
             element={<CategoryItemProductsPage />}
           />
+          <Route path='/products/:id' element={<ProductInfoPage />} />
         </Routes>
       </main>
       <Footer />

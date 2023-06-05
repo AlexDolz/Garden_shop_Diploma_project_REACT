@@ -9,10 +9,11 @@ import {
 } from '../../store/Reducers/productListReducer';
 import {
   filterCategoryItemProductsBySaleAction,
+  sortByRangeCategoryItemProductsAction,
   sortCategoryItemProducts,
 } from '../../store/Reducers/categoryItemReduce';
 
-const Filter = ({ filter }) => {
+const Filter = ({ showCheckbox, location }) => {
   const [range, setRange] = useState({});
   const { from = '', to = '' } = range;
 
@@ -53,7 +54,27 @@ const Filter = ({ filter }) => {
       from: targetInput === 'from' ? updatedValue : from || -Infinity,
       to: targetInput === 'to' ? updatedValue : to || Infinity,
     };
-    dispatch(sortByRangeAction(newRange));
+    dispatch(
+      location === 'categoryProducts'
+        ? sortByRangeCategoryItemProductsAction(newRange)
+        : sortByRangeAction(newRange)
+    );
+  };
+
+  const handleFilterBySale = event => {
+    dispatch(
+      location === 'categoryProducts'
+        ? filterCategoryItemProductsBySaleAction(event.target.checked)
+        : filterProductsBySaleAction(event.target.checked)
+    );
+  };
+
+  const handleSortProducts = event => {
+    dispatch(
+      location === 'categoryProducts'
+        ? sortCategoryItemProducts(event.target.value)
+        : sortProductsAction(event.target.value)
+    );
   };
 
   return (
@@ -61,7 +82,7 @@ const Filter = ({ filter }) => {
       <form className={s.form}>
         <label
           className={s.filter__label}
-          style={filter === 'notAllFilters' ? { marginRight: '68px' } : {}}
+          style={!showCheckbox ? { marginRight: '68px' } : {}}
         >
           Price
           <Input
@@ -81,16 +102,11 @@ const Filter = ({ filter }) => {
             onKeyDown={handleKeyDown}
           />
         </label>
-        {filter === 'allFilters' && (
+        {showCheckbox && (
           <label className={`${s.filter__label} ${s.filter__label__discount}`}>
             Discounted items
             <Input
-              onClick={event => {
-                dispatch(filterProductsBySaleAction(event.target.checked));
-                // dispatch(
-                //   filterCategoryItemProductsBySaleAction(event.target.checked)
-                // );
-              }}
+              onClick={handleFilterBySale}
               type='checkbox'
               className='filter__checkbox'
             />
@@ -98,13 +114,7 @@ const Filter = ({ filter }) => {
         )}
         <label className={`${s.filter__label} ${s.filter__label__sort}`}>
           Sorted
-          <select
-            onChange={event => {
-              dispatch(sortProductsAction(event.target.value));
-              // dispatch(sortCategoryItemProducts(event.target.value));
-            }}
-            className={s.filter__select}
-          >
+          <select onChange={handleSortProducts} className={s.filter__select}>
             <option value='default'>by default</option>
             <option value='title_a_z'>by title a-z</option>
             <option value='title_z_a'>by title z-a</option>

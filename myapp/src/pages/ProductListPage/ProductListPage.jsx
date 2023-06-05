@@ -15,10 +15,9 @@ const ProductListPage = () => {
     <div>
       <div className='container'>
         <h2 className={s.products__page__title}>All Products</h2>
-        <Filter filter='allFilters' />
       </div>
       <div className='container'>
-        <ProductList showAll />
+        <ProductList showCheckbox location='allProducts' />
       </div>
     </div>
   );

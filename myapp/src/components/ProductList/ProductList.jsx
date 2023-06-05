@@ -3,8 +3,17 @@ import s from './ProductList.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchProductList } from '../../asynActions/requests';
 import ProductItem from '../ProductItem/ProductItem';
+import Filter from '../Filter/Filter';
 
-const ProductList = ({ categoryProducts, showAll, showAllSale }) => {
+const ProductList = ({
+  categoryProducts,
+  showAllSale,
+  showRandomProducts,
+  showCheckbox,
+  onChange,
+  location,
+  showFilter = true,
+}) => {
   const dispatch = useDispatch();
   const productList = useSelector(store =>
     store.productList?.filter(elem => elem.showBySale && elem.rangeActive)
@@ -16,7 +25,7 @@ const ProductList = ({ categoryProducts, showAll, showAllSale }) => {
 
   let filteredProducts = categoryProducts || productList;
 
-  if (!showAll) {
+  if (showRandomProducts) {
     filteredProducts = productList
       .filter(elem => elem.discont_price)
       .sort(() => Math.random() - 0.5)
@@ -30,10 +39,19 @@ const ProductList = ({ categoryProducts, showAll, showAllSale }) => {
   //   return <NotFoundPage/>
   // }
   return (
-    <div className={s.products__list}>
-      {filteredProducts.map((elem, index) => (
-        <ProductItem key={index} {...elem} />
-      ))}
+    <div>
+      {showFilter && (
+        <Filter
+          onChange={onChange}
+          location={location}
+          showCheckbox={showCheckbox}
+        />
+      )}
+      <div className={s.products__list}>
+        {filteredProducts.map((elem, index) => (
+          <ProductItem key={index} {...elem} />
+        ))}
+      </div>
     </div>
   );
 };

@@ -4,6 +4,8 @@ const GET_CATEGORY_ITEM_PRODUCTS = 'GET_CATEGORY_ITEM_PRODUCTS';
 const SORT_CATEGORY_ITEM_PRODUCTS = 'SORT_CATEGORY_ITEM_PRODUCTS';
 const FILTER_CATEGORY_ITEM_PRODUCTS_BY_SALE =
   'FILTER_CATEGORY_ITEM_PRODUCTS_BY_SALE';
+const SORT_BY_RANGE_CATEGORY_ITEM_PRODUCTS =
+  'SORT_BY_RANGE_CATEGORY_ITEM_PRODUCTS';
 
 export const categoryItemReducer = (state = defaultState, action) => {
   switch (action.type) {
@@ -19,10 +21,10 @@ export const categoryItemReducer = (state = defaultState, action) => {
 
     case SORT_CATEGORY_ITEM_PRODUCTS:
       let sortedState = [...state.data];
-      if (action.payload === 'title') {
-        sortedState.sort((a, b) =>
-          a[action.payload].localeCompare(b[action.payload])
-        );
+      if (action.payload === 'title_a_z') {
+        sortedState.sort((a, b) => a.title.localeCompare(b.title));
+      } else if (action.payload === 'title_z_a') {
+        sortedState.sort((a, b) => b.title.localeCompare(a.title));
       } else if (action.payload === 'ascending_price') {
         sortedState.sort((a, b) => {
           const priceA = a.discont_price || a.price;
@@ -41,15 +43,39 @@ export const categoryItemReducer = (state = defaultState, action) => {
       return { ...state, data: sortedState };
 
     case FILTER_CATEGORY_ITEM_PRODUCTS_BY_SALE:
-      const filteredData = state.data.filter(elem => {
-        if (elem.discont_price === null) {
-          return { ...elem, showBySale: action.payload };
+      const filteredData = state.data.map(elem => {
+        if (action.payload) {
+          if (elem.discunt_price !== null) {
+            return { ...elem, showBySale: true };
+          } else {
+            return { ...elem, showBySale: false };
+          }
+        } else {
+          return { ...elem, showBySale: true };
         }
-        return { ...elem, showBySale: true };
       });
-      console.log(filteredData);
       return { ...state, data: filteredData };
-    // return { ...state, data: filteredState, showBySale: action.payload };
+
+    case SORT_BY_RANGE_CATEGORY_ITEM_PRODUCTS:
+      const { from, to } = action.payload;
+
+      const hasFrom = from !== '';
+      const hasTo = to !== '';
+
+      const filteredData2 = state.data.map(elem => {
+        const price = elem.discont_price || elem.price;
+        const isInRange =
+          (!hasFrom || price >= +from) && (!hasTo || price <= +to);
+        return {
+          ...elem,
+          rangeActive: isInRange,
+        };
+      });
+
+      return {
+        ...state,
+        data: filteredData2,
+      };
 
     default:
       return state;
@@ -66,5 +92,9 @@ export const sortCategoryItemProducts = payload => ({
 });
 export const filterCategoryItemProductsBySaleAction = payload => ({
   type: FILTER_CATEGORY_ITEM_PRODUCTS_BY_SALE,
+  payload,
+});
+export const sortByRangeCategoryItemProductsAction = payload => ({
+  type: SORT_BY_RANGE_CATEGORY_ITEM_PRODUCTS,
   payload,
 });

@@ -4,7 +4,6 @@ import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCategoryItemProducts } from '../../asynActions/requests';
 import ProductList from '../../components/ProductList/ProductList';
-import Filter from '../../components/Filter/Filter';
 
 const CategoryItemProductsPage = () => {
   const { id } = useParams();
@@ -26,8 +25,11 @@ const CategoryItemProductsPage = () => {
     <div>
       <div className='container'>
         <h2 className={s.category__products__section__title}>{title}</h2>
-        <Filter filter='allFilters' />
-        <ProductList categoryProducts={categoryProducts} showAll />
+        <ProductList
+          categoryProducts={categoryProducts}
+          showCheckbox
+          location='categoryProducts'
+        />
       </div>
     </div>
   );

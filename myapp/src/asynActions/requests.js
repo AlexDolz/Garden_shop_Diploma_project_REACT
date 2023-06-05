@@ -1,9 +1,6 @@
 import { getCategoriesListAction } from '../store/Reducers/categoriesListReducer';
 import { getCategoryItemProductsAction } from '../store/Reducers/categoryItemReduce';
-import {
-  getProductListAction,
-  // getProductListPageProductsAction,
-} from '../store/Reducers/productListReducer';
+import { getProductListAction } from '../store/Reducers/productListReducer';
 
 const rootUrl = 'http://localhost:3333';
 

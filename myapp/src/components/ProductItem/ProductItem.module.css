@@ -1,8 +1,9 @@
 .product__item {
   transition: opacity 0.3s ease;
   cursor: pointer;
-
-  /* To add forward on productInfoPage onclick */
+}
+.product__item a {
+  text-decoration: none;
 }
 
 .product__img__wrapper {
@@ -39,6 +40,7 @@
   font-size: 30px;
   line-height: 130%;
   letter-spacing: 0.03em;
+  color: #000000;
 }
 .product__discount__price_span {
   font-size: 20px;
