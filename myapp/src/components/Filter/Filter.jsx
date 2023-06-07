@@ -3,17 +3,12 @@ import s from './Filter.module.css';
 import Input from '../UI/Input/Input';
 import { useDispatch } from 'react-redux';
 import {
+  filterByRangeAction,
   filterProductsBySaleAction,
-  sortByRangeAction,
   sortProductsAction,
 } from '../../store/Reducers/productListReducer';
-import {
-  filterCategoryItemProductsBySaleAction,
-  sortByRangeCategoryItemProductsAction,
-  sortCategoryItemProducts,
-} from '../../store/Reducers/categoryItemReduce';
 
-const Filter = ({ showCheckbox, location }) => {
+const Filter = ({ type, filterValues, onFilterChange }) => {
   const [range, setRange] = useState({});
   const { from = '', to = '' } = range;
 
@@ -54,27 +49,20 @@ const Filter = ({ showCheckbox, location }) => {
       from: targetInput === 'from' ? updatedValue : from || -Infinity,
       to: targetInput === 'to' ? updatedValue : to || Infinity,
     };
-    dispatch(
-      location === 'categoryProducts'
-        ? sortByRangeCategoryItemProductsAction(newRange)
-        : sortByRangeAction(newRange)
-    );
+    onFilterChange(newRange);
+    dispatch(filterByRangeAction(newRange));
   };
 
   const handleFilterBySale = event => {
-    dispatch(
-      location === 'categoryProducts'
-        ? filterCategoryItemProductsBySaleAction(event.target.checked)
-        : filterProductsBySaleAction(event.target.checked)
-    );
+    const isChecked = event.target.checked;
+    onFilterChange({ ...filterValues, sale: isChecked });
+    dispatch(filterProductsBySaleAction(isChecked));
   };
 
   const handleSortProducts = event => {
-    dispatch(
-      location === 'categoryProducts'
-        ? sortCategoryItemProducts(event.target.value)
-        : sortProductsAction(event.target.value)
-    );
+    const value = event.target.value;
+    onFilterChange({ ...filterValues, sort: value });
+    dispatch(sortProductsAction(value));
   };
 
   return (
@@ -82,7 +70,7 @@ const Filter = ({ showCheckbox, location }) => {
       <form className={s.form}>
         <label
           className={s.filter__label}
-          style={!showCheckbox ? { marginRight: '68px' } : {}}
+          style={type !== 'all' ? { marginRight: '68px' } : {}}
         >
           Price
           <Input
@@ -102,7 +90,7 @@ const Filter = ({ showCheckbox, location }) => {
             onKeyDown={handleKeyDown}
           />
         </label>
-        {showCheckbox && (
+        {type !== 'sale' && (
           <label className={`${s.filter__label} ${s.filter__label__discount}`}>
             Discounted items
             <Input

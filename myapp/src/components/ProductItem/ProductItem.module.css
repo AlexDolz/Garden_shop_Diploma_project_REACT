@@ -9,7 +9,6 @@
 .product__img__wrapper {
   width: 300px;
   height: 300px;
-  border-radius: 15px;
   margin-bottom: 20px;
   overflow: hidden;
   position: relative;
@@ -22,7 +21,6 @@
   height: 100%;
   max-width: 100%;
   object-fit: contain;
-  border-radius: 15px;
 }
 .product__price__wrapper {
   display: flex;

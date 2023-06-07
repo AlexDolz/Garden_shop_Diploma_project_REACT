@@ -12,7 +12,7 @@ const Header = () => {
         <NavLink to={'/'}>
           <img className={s.header__logo} src={header_logo} alt='header_logo' />
         </NavLink>
-        <NavLink to={'/categoriesList'}>
+        <NavLink to={'/categories'}>
           <Button text='Catalog' className='header__btn' />
         </NavLink>
       </div>

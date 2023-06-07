@@ -6,7 +6,6 @@
   height: 350px;
   width: 318px;
   overflow: hidden;
-  border-radius: 15px;
   margin-bottom: 20px;
 }
 
@@ -15,7 +14,6 @@
   height: 100%;
   max-width: 100%;
   object-fit: cover;
-  border-radius: 15px;
   transition: transform 0.3s ease;
 }
 .category__img__wrapper:hover img {

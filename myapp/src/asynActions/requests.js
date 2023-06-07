@@ -1,6 +1,8 @@
 import { getCategoriesListAction } from '../store/Reducers/categoriesListReducer';
-import { getCategoryItemProductsAction } from '../store/Reducers/categoryItemReduce';
-import { getProductListAction } from '../store/Reducers/productListReducer';
+import {
+  productListByCategoryAction,
+  productListBySaleAction,
+} from '../store/Reducers/productListReducer';
 
 const rootUrl = 'http://localhost:3333';
 
@@ -16,13 +18,28 @@ export const fetchCategoriesList = () => {
 
 const productListUrl = `${rootUrl}/products/all`;
 
-export const fetchProductList = () => {
+export function fetchAllProductList(type) {
   return function (dispatch) {
     fetch(productListUrl)
       .then(res => res.json())
-      .then(data => dispatch(getProductListAction(data)));
+      .then(data => {
+        dispatch(productListByCategoryAction({ data, category: {} }));
+        if (type === 'sale') {
+          dispatch(productListBySaleAction());
+        }
+      });
   };
-};
+}
+
+const categoryItemProductsUrl = `${rootUrl}/categories/`;
+
+export function fetchProductListByCategory(id) {
+  return function (dispatch) {
+    fetch(`${categoryItemProductsUrl}/${id}`)
+      .then(res => res.json())
+      .then(data => dispatch(productListByCategoryAction(data)));
+  };
+}
 
 const getDiscountUrl = `${rootUrl}/sale/send`;
 
@@ -37,14 +54,4 @@ export const discountRequest = discount => {
     .then(res => res.json())
     .then(data => console.log(data));
   console.log(discount);
-};
-
-const categoryItemProductsUrl = `${rootUrl}/categories/`;
-
-export const fetchCategoryItemProducts = id => {
-  return function (dispatch) {
-    fetch(`${categoryItemProductsUrl}${id}`)
-      .then(res => res.json())
-      .then(data => dispatch(getCategoryItemProductsAction(data)));
-  };
 };
