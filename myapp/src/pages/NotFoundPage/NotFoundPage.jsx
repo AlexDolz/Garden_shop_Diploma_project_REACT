@@ -6,7 +6,7 @@ const NotFoundPage = ({ type }) => {
   useEffect(() => {
     const defaultTitle = document.title;
     if (type === 'not_found') {
-      document.title = 'Error - Not_found_page';
+      document.title = 'Page Not Found';
     }
 
     return () => {

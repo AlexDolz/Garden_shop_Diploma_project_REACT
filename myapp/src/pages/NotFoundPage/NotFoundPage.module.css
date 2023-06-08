@@ -1,9 +1,12 @@
 .not__found__wrapper {
-  width: 100%;
+  margin: 0 auto;
   height: 100%;
+  max-width: 1440px;
   padding-bottom: 47px;
 }
 .not__found__img {
   width: 100%;
   height: 100%;
+  max-width: 100%;
+  object-fit: cover;
 }
