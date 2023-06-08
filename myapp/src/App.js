@@ -8,6 +8,7 @@ import ShoppingCartPage from './pages/ShoppingCartPage/ShoppingCartPage';
 import CategoriesListPage from './pages/CategoriesListPage/CategoriesListPage';
 import Footer from './components/Footer/Footer';
 import ProductInfoPage from './pages/ProductInfoPage/ProductInfoPage';
+import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -40,6 +41,7 @@ const App = () => {
             element={<ProductListPage type={'category'} />}
           />
           <Route path='/products/:id' element={<ProductInfoPage />} />
+          <Route path='*' element={<NotFoundPage type={'not_found'} />} />
         </Routes>
       </main>
       <Footer />
