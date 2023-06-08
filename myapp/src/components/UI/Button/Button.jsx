@@ -8,6 +8,7 @@ const Button = ({ text, className, onClick }) => {
     [s.head__btn]: className === 'head__btn',
     [s.categories__btn]: className === 'categories__btn',
     [s.discount__btn]: className === 'discount__btn',
+    [s.add__to__cart__modal]: className === 'add__to__cart__modal',
     [s.add__to__cart__btn]: className === 'add__to__cart__btn',
   });
   return (

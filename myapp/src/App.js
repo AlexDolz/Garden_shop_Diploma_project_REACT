@@ -31,7 +31,10 @@ const App = () => {
           <Route path='/products' element={<ProductListPage type={'all'} />} />
           <Route path='/sales' element={<ProductListPage type={'sale'} />} />
           <Route path='/cart' element={<ShoppingCartPage />} />
-          <Route path='/categories' element={<CategoriesListPage />} />
+          <Route
+            path='/categories'
+            element={<CategoriesListPage type='categories' />}
+          />
           <Route
             path='/categories/:id'
             element={<ProductListPage type={'category'} />}

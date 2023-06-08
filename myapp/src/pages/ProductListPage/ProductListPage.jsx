@@ -8,6 +8,7 @@ import {
 } from '../../asynActions/requests';
 import ProductList from '../../components/ProductList/ProductList';
 import Filter from '../../components/Filter/Filter';
+import products_not_found from './media/products_not_found.png';
 
 const ProductListPage = ({ type }) => {
   const { id } = useParams();
@@ -57,7 +58,7 @@ const ProductListPage = ({ type }) => {
   }, []);
 
   useEffect(() => {
-    document.title = titlePage.title;
+    document.title = `Garden - ${titlePage.title}`;
   }, [titlePage]);
 
   return (
@@ -70,7 +71,17 @@ const ProductListPage = ({ type }) => {
           onFilterChange={handleFilterChange}
           key={location.pathname}
         />
-        <ProductList products={productList} />
+        {productList.length > 0 ? (
+          <ProductList products={productList} />
+        ) : (
+          <div className={s.products__not__found__wrapper}>
+            <img
+              className={s.products__not__found__img}
+              src={products_not_found}
+              alt='products_not_found'
+            />
+          </div>
+        )}
       </div>
     </div>
   );

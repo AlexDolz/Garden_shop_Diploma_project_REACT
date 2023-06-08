@@ -22,7 +22,7 @@
   max-width: 100%;
   object-fit: contain;
 }
-.product__price__wrapper {
+/* .product__price__wrapper {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -58,7 +58,7 @@
   line-height: 130%;
   letter-spacing: 0.03em;
   color: #ff32a1;
-}
+} */
 
 .product__title {
   font-weight: 500;

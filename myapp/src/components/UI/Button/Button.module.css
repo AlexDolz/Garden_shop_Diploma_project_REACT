@@ -112,9 +112,9 @@
   box-shadow: none;
 }
 
-/* *****************************add__to__cart__btn****************************** */
-
-.add__to__cart__btn {
+/* *****************************add__to__cart__modal****************************** */
+/* *****************************add__to__cart__btn******************************* */
+.add__to__cart__modal {
   width: 279px;
   height: 72px;
   background: #f1fff1;
@@ -129,7 +129,7 @@
   transition: background 0.3s ease, box-shadow 0.1s ease-out,
     transform 0.3s ease;
 }
-.add__to__cart__btn:hover {
+.add__to__cart__modal:hover {
   background: #339933;
   border: 1px solid whitesmoke;
   color: white;
@@ -138,6 +138,32 @@
   transition: background 0.3s ease, box-shadow 0.1s ease-out,
     transform 0.3s ease;
 }
+.add__to__cart__modal:active {
+  top: 1px;
+  box-shadow: none;
+}
+
+.add__to__cart__btn {
+  width: 341px;
+  height: 86px;
+  background: #339933;
+  border: 2px solid #339933;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 130%;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background 0.3s ease, box-shadow 0.1s ease-out;
+  position: relative;
+}
+
+.add__to__cart__btn:hover {
+  background: #3eba3e;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
 .add__to__cart__btn:active {
   top: 1px;
   box-shadow: none;

@@ -5,3 +5,13 @@
   letter-spacing: 0.03em;
   padding-bottom: 81px;
 }
+.products__not__found__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 80px;
+}
+.products__not__found__img {
+  width: 400px;
+  height: 400px;
+}

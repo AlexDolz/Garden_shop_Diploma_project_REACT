@@ -1,13 +1,14 @@
 import s from './ProductItem.module.css';
 import Button from '../UI/Button/Button';
 import { NavLink } from 'react-router-dom';
+import ProductPrice from '../ProductPrice/ProductPrice';
 
 const ProductItem = ({ image, price, discont_price, title, id }) => {
   const rootUrl = 'http://localhost:3333';
 
-  const discountPercentage = Math.round(
-    ((price - discont_price) / price) * 100
-  );
+  // const discountPercentage = Math.round(
+  //   ((price - discont_price) / price) * 100
+  // );
 
   return (
     <div className={s.product__item}>
@@ -18,12 +19,11 @@ const ProductItem = ({ image, price, discont_price, title, id }) => {
             src={`${rootUrl}${image}`}
             alt={title}
           />
-          {/* addToCartButton onclick{handleAddToCart} to make! */}
           <div className={s.product__modal}>
-            <Button text='Add to cart' className='add__to__cart__btn' />
+            <Button text='Add to cart' className='add__to__cart__modal' />
           </div>
         </div>
-        <div
+        {/* <div
           className={`${s.product__price__wrapper} ${
             discont_price ? '' : s.align__start
           }`}
@@ -45,7 +45,8 @@ const ProductItem = ({ image, price, discont_price, title, id }) => {
               <span className={s.product__discount__price_span}>$</span>
             </p>
           )}
-        </div>
+        </div> */}
+        <ProductPrice price={price} discont_price={discont_price} />
         <h3 className={s.product__title}>{title}</h3>
       </NavLink>
     </div>
