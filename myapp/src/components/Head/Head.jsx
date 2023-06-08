@@ -16,7 +16,7 @@ const Head = () => {
   }, []);
 
   const changeBackground = () => {
-    const gradients = ['#a1e2eb', '#fbd3e9', '#f9e17d', '#b8f2a4', '#339933'];
+    const gradients = ['#a1e2eb', '#fbd3e9', '#f9e17d', '#339933'];
     const randomIndex = Math.floor(Math.random() * gradients.length);
     setBackground(gradients[randomIndex]);
   };

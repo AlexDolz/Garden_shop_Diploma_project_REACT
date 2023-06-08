@@ -64,7 +64,7 @@ const ProductListPage = ({ type }) => {
   return (
     <div className='container'>
       <h2 className={s.products__page__title}>{titlePage.title}</h2>
-      <div className='product_wrapper'>
+      <div className='products_wrapper'>
         <Filter
           type={type}
           filterValues={filterValues}
