@@ -1,8 +1,9 @@
 .head__container {
-  background: #a1e2eb;
+  /* background: #a1e2eb; */
   min-height: 600px;
   margin-bottom: 40px;
   position: relative;
+  transition: background 2s ease;
 }
 .banner__container {
   max-width: 1410px;
