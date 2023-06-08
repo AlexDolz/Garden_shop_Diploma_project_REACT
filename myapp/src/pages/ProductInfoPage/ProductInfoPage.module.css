@@ -28,6 +28,7 @@
   width: 710px;
   height: 710px;
   margin-left: 58px;
+  object-fit: contain;
 }
 .price__btn__descr__wrapper {
   display: flex;
