@@ -5,4 +5,14 @@
   gap: 42px;
   row-gap: 58px;
   padding: 0 6px 80px 6px;
+  animation: fadeIn 0.5s ease forwards;
+  opacity: 0;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

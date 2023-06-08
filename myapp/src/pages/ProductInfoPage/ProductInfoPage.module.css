@@ -40,7 +40,7 @@
   width: 100%;
   padding-bottom: 41px;
   border-style: dashed;
-  border-width: 1px;
+  border-width: 1.5px;
   border-image: url(./media/dashed_line.png);
   border-image-slice: 0 0 1 0;
   margin-bottom: 26px;

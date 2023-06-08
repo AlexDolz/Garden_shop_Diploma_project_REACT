@@ -5,7 +5,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import Button from '../../components/UI/Button/Button';
 import ProductPrice from '../../components/ProductPrice/ProductPrice';
 import product_not_found from './media/product_not_found.png';
-// import dashed_line from './media/dashed_line.png';
 
 const ProductInfoPage = () => {
   const dispatch = useDispatch();
@@ -27,8 +26,6 @@ const ProductInfoPage = () => {
       document.title = defaultTitle;
     };
   }, [productItem]);
-
-  // const defaultTitle = 'Your Default Title';
 
   if (!productItem) {
     return (
