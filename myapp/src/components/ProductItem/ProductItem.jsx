@@ -1,54 +1,44 @@
 import s from './ProductItem.module.css';
 import Button from '../UI/Button/Button';
-import { NavLink } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import ProductPrice from '../ProductPrice/ProductPrice';
+import { useDispatch } from 'react-redux';
+import { addProductToCartAction } from '../../store/Reducers/cartReducer';
 
-const ProductItem = ({ image, price, discont_price, title, id }) => {
+const ProductItem = ({ product }) => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const { image, price, discont_price, title, id } = product;
   const rootUrl = 'http://localhost:3333';
 
-  // const discountPercentage = Math.round(
-  //   ((price - discont_price) / price) * 100
-  // );
+  const handleItemClick = () => {
+    navigate(`/products/${id}`);
+  };
+
+  const handleAddToCartClick = event => {
+    event.stopPropagation();
+    dispatch(addProductToCartAction(product));
+  };
 
   return (
-    <div className={s.product__item}>
-      <NavLink to={`/products/${id}`}>
-        <div className={s.product__img__wrapper}>
-          <img
-            className={s.product__img}
-            src={`${rootUrl}${image}`}
-            alt={title}
+    <div className={s.product__item} onClick={handleItemClick}>
+      <div className={s.product__img__wrapper}>
+        <img
+          className={s.product__img}
+          src={`${rootUrl}${image}`}
+          alt={title}
+        />
+        <div className={s.product__modal}>
+          <Button
+            text='Add to cart'
+            className='add__to__cart__modal'
+            onClick={handleAddToCartClick}
           />
-          <div className={s.product__modal}>
-            <Button text='Add to cart' className='add__to__cart__modal' />
-          </div>
         </div>
-        {/* <div
-          className={`${s.product__price__wrapper} ${
-            discont_price ? '' : s.align__start
-          }`}
-        >
-          {discont_price ? (
-            <>
-              <p className={s.product__discount__price}>
-                {discont_price}
-                <span className={s.product__discount__price_span}>$</span>
-              </p>
-              <p className={s.product__old__price}>{price}$</p>
-              <p className={s.product__discount__percentage}>
-                -{discountPercentage}%
-              </p>
-            </>
-          ) : (
-            <p className={s.product__discount__price}>
-              {price}
-              <span className={s.product__discount__price_span}>$</span>
-            </p>
-          )}
-        </div> */}
-        <ProductPrice price={price} discont_price={discont_price} />
-        <h3 className={s.product__title}>{title}</h3>
-      </NavLink>
+      </div>
+
+      <ProductPrice price={price} discont_price={discont_price} />
+      <h3 className={s.product__title}>{title}</h3>
     </div>
   );
 };

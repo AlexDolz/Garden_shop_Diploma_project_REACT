@@ -10,11 +10,21 @@
   gap: 70px;
   max-width: 422px;
 }
+.product__price__wrapper.cart {
+  max-width: 203px;
+  padding-bottom: 0;
+  justify-content: unset;
+  width: 100%;
+  gap: 70px;
+}
 .align__start {
   justify-content: flex-start;
   margin-left: 25px;
 }
 .align__start.info {
+  margin-left: 0;
+}
+.align__start.cart {
   margin-left: 0;
 }
 .product__discount__price {
@@ -26,6 +36,9 @@
 }
 .product__discount__price.info {
   font-size: 70px;
+}
+.product__discount__price.cart {
+  font-size: 40px;
 }
 .product__discount__price_span {
   font-size: 20px;

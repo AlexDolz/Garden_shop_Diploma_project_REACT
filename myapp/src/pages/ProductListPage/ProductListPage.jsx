@@ -32,7 +32,7 @@ const ProductListPage = ({ type }) => {
     } else {
       dispatch(fetchAllProductList(type));
     }
-  }, [id, type]);
+  }, [id, type, dispatch]);
 
   const locationRef = useRef(null);
 

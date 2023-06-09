@@ -12,7 +12,7 @@ const CategoriesListPage = ({ type }) => {
     return () => {
       document.title = defaultTitle;
     };
-  }, []);
+  }, [type]);
   return (
     <div>
       <div className='container'>

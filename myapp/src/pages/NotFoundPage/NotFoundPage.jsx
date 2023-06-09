@@ -12,7 +12,7 @@ const NotFoundPage = ({ type }) => {
     return () => {
       document.title = defaultTitle;
     };
-  }, []);
+  }, [type]);
   return (
     <div className={s.not__found__wrapper}>
       <img

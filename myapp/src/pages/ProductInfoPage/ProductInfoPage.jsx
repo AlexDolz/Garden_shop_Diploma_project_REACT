@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Button from '../../components/UI/Button/Button';
 import ProductPrice from '../../components/ProductPrice/ProductPrice';
 import product_not_found from './media/product_not_found.png';
+import { addProductToCartAction } from '../../store/Reducers/cartReducer';
 
 const ProductInfoPage = () => {
   const dispatch = useDispatch();
@@ -42,6 +43,7 @@ const ProductInfoPage = () => {
             <img
               className={s.product__img}
               src={`${rootUrl}${productItem.image}`}
+              alt='product_img'
             />
           </div>
           <div className={s.price__btn__descr__wrapper}>
@@ -51,7 +53,11 @@ const ProductInfoPage = () => {
                 discont_price={productItem.discont_price}
                 page='info'
               />
-              <Button className='add__to__cart__btn' text='To cart' />
+              <Button
+                className='add__to__cart__btn'
+                text='To cart'
+                onClick={() => dispatch(addProductToCartAction(productItem))}
+              />
             </div>
             <div className={s.descr__wrapper}>
               <h3 className={s.descr__title}>Description</h3>

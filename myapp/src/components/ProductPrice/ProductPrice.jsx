@@ -1,7 +1,7 @@
 import React from 'react';
 import s from './ProductPrice.module.css';
 
-const ProductPrice = ({ discont_price, price, page }) => {
+const ProductPrice = ({ discont_price, price, page, showPercentage }) => {
   const discountPercentage = Math.round(
     ((price - discont_price) / price) * 100
   );
@@ -19,9 +19,11 @@ const ProductPrice = ({ discont_price, price, page }) => {
             <span className={s.product__discount__price_span}>$</span>
           </p>
           <p className={s.product__old__price}>{price}$</p>
-          <p className={`${s.product__discount__percentage} ${s[page]}`}>
-            -{discountPercentage}%
-          </p>
+          {showPercentage && (
+            <p className={`${s.product__discount__percentage} ${s[page]}`}>
+              -{discountPercentage}%
+            </p>
+          )}
         </>
       ) : (
         <p className={`${s.product__discount__price} ${s[page]}`}>
