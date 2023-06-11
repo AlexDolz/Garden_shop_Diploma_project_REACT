@@ -1,18 +1,19 @@
 {
   "files": {
-    "main.css": "/Garden_shop_Diplom_project_REACT/static/css/main.2dfe3e5a.css",
-    "main.js": "/Garden_shop_Diplom_project_REACT/static/js/main.ca525131.js",
+    "main.css": "/Garden_shop_Diplom_project_REACT/static/css/main.cd500963.css",
+    "main.js": "/Garden_shop_Diplom_project_REACT/static/js/main.f2ef870d.js",
     "static/media/banner_img.png": "/Garden_shop_Diplom_project_REACT/static/media/banner_img.658003f07fff1d487ea7.png",
     "static/media/products_not_found.png": "/Garden_shop_Diplom_project_REACT/static/media/products_not_found.31c55d6b9e6026716dc8.png",
     "static/media/discount_img.png": "/Garden_shop_Diplom_project_REACT/static/media/discount_img.81a782ecb2748e1dc610.png",
     "static/media/not_found_page.jpg": "/Garden_shop_Diplom_project_REACT/static/media/not_found_page.11d10401fec64c9b32c7.jpg",
     "static/media/product_not_found.png": "/Garden_shop_Diplom_project_REACT/static/media/product_not_found.7425bfa271cc0ec6dbaf.png",
+    "static/media/empty_cart.png": "/Garden_shop_Diplom_project_REACT/static/media/empty_cart.72e00edc7adc1466c1a7.png",
     "index.html": "/Garden_shop_Diplom_project_REACT/index.html",
-    "main.2dfe3e5a.css.map": "/Garden_shop_Diplom_project_REACT/static/css/main.2dfe3e5a.css.map",
-    "main.ca525131.js.map": "/Garden_shop_Diplom_project_REACT/static/js/main.ca525131.js.map"
+    "main.cd500963.css.map": "/Garden_shop_Diplom_project_REACT/static/css/main.cd500963.css.map",
+    "main.f2ef870d.js.map": "/Garden_shop_Diplom_project_REACT/static/js/main.f2ef870d.js.map"
   },
   "entrypoints": [
-    "static/css/main.2dfe3e5a.css",
-    "static/js/main.ca525131.js"
+    "static/css/main.cd500963.css",
+    "static/js/main.f2ef870d.js"
   ]
 }
