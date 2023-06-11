@@ -1,10 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import s from './ShoppingCartPage.module.css';
 import { NavLink } from 'react-router-dom';
 import { SlArrowRight } from 'react-icons/sl';
 import CartList from '../../components/CartList/CartList';
 
-const ShoppingCartPage = () => {
+const ShoppingCartPage = ({ type }) => {
+  useEffect(() => {
+    const defaultTitle = document.title;
+    if (type === 'cart') {
+      document.title = 'Garden - Your cart';
+    }
+
+    return () => {
+      document.title = defaultTitle;
+    };
+  }, [type]);
   return (
     <div className='container'>
       <div className={s.shopping__cart__info__wrapper}>

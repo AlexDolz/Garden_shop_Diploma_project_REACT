@@ -2,6 +2,7 @@ import React from 'react';
 import s from './Navigation.module.css';
 import { NavLink } from 'react-router-dom';
 import { HiOutlineShoppingBag } from 'react-icons/hi';
+import CartCounter from '../CartCounter/CartCounter';
 
 const Navigation = () => {
   return (
@@ -19,7 +20,8 @@ const Navigation = () => {
       </ul>
       <div className={s.navigation__icon__container}>
         <NavLink to='/cart'>
-          <HiOutlineShoppingBag className={s.navigation__icon} />
+          <HiOutlineShoppingBag className={s.navigation__cart__icon} />
+          <CartCounter />
         </NavLink>
       </div>
     </nav>

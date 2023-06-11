@@ -22,6 +22,10 @@
   display: flex;
   align-items: center;
   gap: 21px;
+  transition: all 0.3s ease-in-out;
+}
+.link__wrapper:hover {
+  color: #339933;
 }
 .back__to__store__arrow {
   font-size: 13px;

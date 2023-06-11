@@ -46,20 +46,17 @@
   top: 1px;
 }
 
-.navigation__icon {
+.navigation__cart__icon {
   width: 26px;
   height: 29px;
   color: #000000;
   transition: color 0.3s ease-in-out;
-}
-.navigation__icon:hover {
-  color: #339933;
-}
-.navigation__icon:active {
   position: relative;
-  top: 1px;
 }
 
 .navigation ul li a:focus {
+  color: #339933;
+}
+.navigation__icon__container:hover .navigation__cart__icon {
   color: #339933;
 }

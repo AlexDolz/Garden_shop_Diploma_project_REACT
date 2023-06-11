@@ -2,9 +2,22 @@
   display: flex;
   max-width: 824px;
   height: 247px;
-  border-bottom: 1px solid #a7a7a7;
+  border-top: 1px solid #a7a7a7;
   padding: 40px 0;
   position: relative;
+  animation: slide-in 0.6s ease forwards;
+  transform: translateX(-100%);
+}
+@keyframes slide-in {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.cart__item:last-child {
+  border-bottom: 1px solid #a7a7a7;
 }
 .item__img {
   border-radius: 15px;
@@ -37,10 +50,23 @@
   height: 40px;
   border: 1px solid #000000;
   border-radius: 12px;
+  user-select: none;
 }
 .counter__decr {
   font-size: 24px;
   cursor: pointer;
+}
+.counter__decr:hover,
+.counter__incr:hover {
+  color: #339933;
+  border: 1px solid #339933;
+  border-radius: 50%;
+  box-shadow: 1px 1px 7px inset;
+}
+.counter__decr:active,
+.counter__incr:active {
+  color: white;
+  background-color: #339933;
 }
 .counter__count {
   font-weight: 600;
@@ -56,6 +82,13 @@
   position: absolute;
   top: 40px;
   right: 0;
-  font-size: 24px;
+  font-size: 26px;
   cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.close__mark:hover {
+  color: #ff32a1;
+}
+.close__mark:active {
+  color: #ffacd8;
 }

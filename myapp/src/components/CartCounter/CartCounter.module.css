@@ -1,0 +1,18 @@
+.cart__counter__wrapper {
+  width: 26px;
+  height: 24px;
+  background: #339933;
+  border-radius: 50%;
+  position: absolute;
+  top: 15px;
+  right: -13px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart__counter {
+  font-size: 12px;
+  font-weight: 600;
+}
