@@ -30,3 +30,7 @@
 .back__to__store__arrow {
   font-size: 13px;
 }
+.cart__order__wrapper {
+  display: flex;
+  justify-content: space-between;
+}

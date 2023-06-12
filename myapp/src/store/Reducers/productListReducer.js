@@ -12,23 +12,31 @@ const FILTER_BY_RANGE = 'FILTER_BY_RANGE';
 export const productListReducer = (state = defaultState, action) => {
   switch (action.type) {
     case PRODUCT_LIST_BY_CATEGORY:
-      if (action.payload.category.title) {
+      const { category, data } = action.payload;
+      if (action.payload.status) {
+        alert('No such category or category is empty');
+      }
+      if (category && category.title) {
         return {
-          titlePage: action.payload.category,
-          productList: action.payload.data.map(elem => ({
-            ...elem,
-            showBySale: true,
-            rangeActive: true,
-          })),
+          titlePage: category,
+          productList: data
+            ? data.map(elem => ({
+                ...elem,
+                showBySale: true,
+                rangeActive: true,
+              }))
+            : [],
         };
       } else {
         return {
           titlePage: { title: 'All products' },
-          productList: action.payload.data.map(elem => ({
-            ...elem,
-            showBySale: true,
-            rangeActive: true,
-          })),
+          productList: data
+            ? data.map(elem => ({
+                ...elem,
+                showBySale: true,
+                rangeActive: true,
+              }))
+            : [],
         };
       }
 
@@ -105,7 +113,6 @@ export const productListReducer = (state = defaultState, action) => {
 
     case FILTER_BY_RANGE:
       const { from, to } = action.payload;
-      console.log(action.payload);
 
       const hasFrom = from !== '';
       const hasTo = to !== '';

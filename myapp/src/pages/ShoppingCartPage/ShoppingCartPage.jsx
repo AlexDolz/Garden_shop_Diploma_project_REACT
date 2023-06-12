@@ -3,6 +3,7 @@ import s from './ShoppingCartPage.module.css';
 import { NavLink } from 'react-router-dom';
 import { SlArrowRight } from 'react-icons/sl';
 import CartList from '../../components/CartList/CartList';
+import Order from '../../components/Order/Order';
 
 const ShoppingCartPage = ({ type }) => {
   useEffect(() => {
@@ -28,6 +29,7 @@ const ShoppingCartPage = ({ type }) => {
       </div>
       <div className={s.cart__order__wrapper}>
         <CartList />
+        <Order />
       </div>
     </div>
   );

@@ -18,7 +18,9 @@ const CartItem = ({ id, title, image, discont_price, price, count }) => {
   return (
     <div className={s.cart__item}>
       <NavLink to={`/products/${id}`}>
-        <img className={s.item__img} src={`${rootUrl}${image}`} alt={title} />
+        <div className={s.img__wrapper}>
+          <img className={s.item__img} src={`${rootUrl}${image}`} alt={title} />
+        </div>
       </NavLink>
       <div className={s.title__counter__wrapper}>
         <NavLink to={`/products/${id}`}>

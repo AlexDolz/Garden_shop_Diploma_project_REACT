@@ -11,8 +11,9 @@ const Input = ({
   onChange,
   onKeyDown,
 }) => {
-  const inputClasses = classNames({
+  const inputClasses = classNames(s.input, {
     [s.discount__input]: className === 'discount__input',
+    [s.order__input]: className === 'order__input',
     [s.filter__input]: className === 'filter__input',
     [s.filter__checkbox]: className === 'filter__checkbox',
   });

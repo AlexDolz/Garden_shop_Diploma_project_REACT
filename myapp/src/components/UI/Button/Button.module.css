@@ -142,7 +142,6 @@
   top: 1px;
   box-shadow: none;
 }
-
 .add__to__cart__btn {
   width: 341px;
   height: 86px;
@@ -165,6 +164,32 @@
 }
 
 .add__to__cart__btn:active {
+  top: 1px;
+  box-shadow: none;
+}
+
+/* ***************************** order__btn ************************************* */
+.order__btn {
+  width: 100%;
+  height: 76px;
+  background: #339933;
+  border: none;
+  border-radius: 17px;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 130%;
+  letter-spacing: 0.03em;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background 0.3s ease, box-shadow 0.1s ease-out;
+  position: relative;
+}
+.order__btn:hover {
+  background: #3eba3e;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+.order__btn:active {
   top: 1px;
   box-shadow: none;
 }
