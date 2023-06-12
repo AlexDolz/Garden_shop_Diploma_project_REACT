@@ -24,7 +24,7 @@
   max-width: 100%;
   width: 192px;
   height: 166px;
-  object-fit: cover;
+  object-fit: contain;
   margin-right: 30px;
 }
 
