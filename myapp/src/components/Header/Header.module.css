@@ -3,6 +3,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px 0 76px 0;
+  animation: slide-in 1s ease forwards;
+  transform: translateY(-100%);
 }
 
 .header__logo__btn__container {
@@ -11,12 +13,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  animation: slide-in 1s ease forwards;
-  transform: translateX(-100%);
 }
 @keyframes slide-in {
   0% {
-    transform: translateX(-100%);
+    transform: translateY(-100%);
   }
   100% {
     transform: translateX(0);
