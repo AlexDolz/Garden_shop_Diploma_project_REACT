@@ -33,4 +33,5 @@
 .cart__order__wrapper {
   display: flex;
   justify-content: space-between;
+  padding-bottom: 191px;
 }
