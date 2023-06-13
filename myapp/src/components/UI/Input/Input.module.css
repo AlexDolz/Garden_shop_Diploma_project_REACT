@@ -28,6 +28,7 @@
   border-radius: 7px;
   padding: 10px;
   outline: none;
+  transition: all 0.2s ease-in-out;
 }
 .filter__input:focus {
   box-shadow: 0 0 3px #339933 inset;
@@ -51,7 +52,7 @@
   height: 40px;
   border: 1px solid #000000;
   border-radius: 7px;
-  transition: background-color 0.1s ease, border-color 0.3s ease;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 .filter__checkbox:checked {
   background-color: #339933c5;

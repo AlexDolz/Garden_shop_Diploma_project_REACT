@@ -39,6 +39,7 @@
   letter-spacing: 0.03em;
   color: #797979;
   cursor: pointer;
+  transition: all 0.2s ease-in-out;
 }
 .filter__select:focus {
   box-shadow: 0 0 3px #339933 inset;

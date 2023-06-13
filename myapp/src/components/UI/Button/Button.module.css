@@ -1,8 +1,12 @@
 /* **************************** general styles **********************************/
-.button:active {
-  top: 1px;
-  box-shadow: none;
+.button {
+  font-weight: 700;
+  line-height: 130%;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.3s ease, box-shadow 0.1s ease-out;
 }
+
 /* ****************************header__btn************************************ */
 
 .header__btn {
@@ -11,13 +15,8 @@
   background: #339933;
   border: 2px solid #339933;
   border-radius: 5px;
-  font-weight: 700;
   font-size: 16px;
-  line-height: 20px;
   color: #ffffff;
-  cursor: pointer;
-  transition: background 0.3s ease, box-shadow 0.1s ease-out;
-  position: relative;
 }
 .header__btn:hover {
   background: #3eba3e;
@@ -33,13 +32,8 @@
   background: #ffffff;
   border: none;
   border-radius: 13px;
-  cursor: pointer;
-  font-weight: 700;
   font-size: 25px;
-  line-height: 130%;
   color: #2d2d2d;
-  transition: background 0.3s ease, box-shadow 0.1s ease-out;
-  position: relative;
 }
 .head__btn:hover {
   background: #a1e2eb;
@@ -55,13 +49,9 @@
   width: 120px;
   height: 30.97px;
   border: 2px solid #8b8b8b;
-  cursor: pointer;
   transition: border 0.2s ease, background 0.2s ease, color 0.2s ease,
     box-shadow 0.1s ease-out;
-  position: relative;
-  font-weight: 700;
   font-size: 12px;
-  line-height: 130%;
   text-align: center;
   letter-spacing: 0.03em;
   color: #8b8b8b;
@@ -82,15 +72,11 @@
   height: 75.44px;
   border: 2.39494px solid #ffffff;
   border-radius: 25.1468px;
-  font-weight: 700;
   font-size: 28.7392px;
   line-height: 120%;
   letter-spacing: 0.03em;
   color: #ffffff;
   padding: 21px 0;
-  cursor: pointer;
-  position: relative;
-  transition: background 0.3s ease, box-shadow 0.1s ease-out;
 }
 
 .discount__btn:hover {
@@ -107,12 +93,9 @@
   background: #f1fff1;
   border: 2px solid #339933;
   border-radius: 21px;
-  cursor: pointer;
   font-weight: 600;
   font-size: 18px;
-  line-height: 130%;
   color: #339933;
-  position: relative;
   transition: background 0.3s ease, box-shadow 0.1s ease-out,
     transform 0.3s ease;
 }
@@ -132,13 +115,8 @@
   background: #339933;
   border: 2px solid #339933;
   border-radius: 10px;
-  font-weight: 700;
   font-size: 28px;
-  line-height: 130%;
   color: #ffffff;
-  cursor: pointer;
-  transition: background 0.3s ease, box-shadow 0.1s ease-out;
-  position: relative;
 }
 
 .add__to__cart__btn:hover {
@@ -154,17 +132,18 @@
   background: #339933;
   border: none;
   border-radius: 17px;
-  font-weight: 700;
   font-size: 28px;
-  line-height: 130%;
   letter-spacing: 0.03em;
   color: #ffffff;
-  cursor: pointer;
-  transition: background 0.3s ease, box-shadow 0.1s ease-out;
-  position: relative;
 }
 .order__btn:hover {
   background: #3eba3e;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+/* **************************general active ************************************ */
+.button:active {
+  top: 1px;
+  box-shadow: none;
 }
