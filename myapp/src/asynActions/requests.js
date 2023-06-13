@@ -55,3 +55,18 @@ export const discountRequest = discount => {
     .then(data => console.log(data));
   console.log(discount);
 };
+
+const sendOrderUrl = `${rootUrl}/order/send`;
+
+export const sendOrderRequest = phoneNum => {
+  fetch(sendOrderUrl, {
+    method: 'POST',
+    headers: {
+      'Content-type': 'application/json;charset=utf-8',
+    },
+    body: JSON.stringify(phoneNum),
+  })
+    .then(res => res.json())
+    .then(data => console.log(data));
+  console.log(phoneNum);
+};

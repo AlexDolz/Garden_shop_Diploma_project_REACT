@@ -5,3 +5,10 @@
   flex-direction: column;
   gap: 20px;
 }
+.discount__complete {
+  text-align: center;
+  font-size: 22px;
+  color: #ff32a1;
+  font-weight: 600;
+  padding-bottom: 20px;
+}

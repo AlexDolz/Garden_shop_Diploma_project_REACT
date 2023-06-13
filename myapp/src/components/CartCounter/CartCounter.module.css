@@ -3,7 +3,7 @@
   height: 24px;
   background: #339933;
   border-radius: 50%;
-  position: relative;
+  position: absolute;
   top: 15px;
   right: -13px;
   color: white;

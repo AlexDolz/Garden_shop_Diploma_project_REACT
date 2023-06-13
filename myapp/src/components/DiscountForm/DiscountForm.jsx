@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import s from './DiscountForm.module.css';
 import Input from '../UI/Input/Input';
 import Button from '../UI/Button/Button';
 import { discountRequest } from '../../asynActions/requests';
 
 const DiscountForm = () => {
+  const [discountComplete, setDiscountComplete] = useState(false);
   const handleKeyDown = event => {
     const allowedKeys = [
       '0',
@@ -35,19 +36,28 @@ const DiscountForm = () => {
     };
     discountRequest(discount);
     event.target.reset();
+    setDiscountComplete(true);
   };
 
   return (
-    <form onSubmit={getDiscount} className={s.discount__form}>
-      <Input
-        placeholder='+49'
-        className='discount__input'
-        name='phone_num'
-        type='text'
-        onKeyDown={handleKeyDown}
-      />
-      <Button text='Get a discount' className='discount__btn' />
-    </form>
+    <div>
+      {discountComplete && (
+        <p className={s.discount__complete}>
+          Congratulations! You've Got a Discount!
+        </p>
+      )}
+      <form onSubmit={getDiscount} className={s.discount__form}>
+        <Input
+          placeholder='+49'
+          className='discount__input'
+          name='phone_num'
+          type='text'
+          onKeyDown={handleKeyDown}
+          required
+        />
+        <Button text='Get a discount' className='discount__btn' />
+      </form>
+    </div>
   );
 };
 

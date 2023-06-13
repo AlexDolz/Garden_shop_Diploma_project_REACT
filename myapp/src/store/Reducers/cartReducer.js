@@ -5,6 +5,7 @@ const ADD_PRODUCT_TO_CART = 'ADD_PRODUCT_TO_CART';
 const INCR_COUNT = 'INCR_COUNT';
 const DECT_COUNT = 'DECT_COUNT';
 const REMOVE_CART_PRODUCT = 'REMOVE_CART_PRODUCT';
+const REMOVE_ALL_CART_PRODUCTS = 'REMOVE_ALL_CART_PRODUCTS';
 
 const sameProductCheck = (state, payload) => {
   const productExist = state.find(elem => elem.id === payload.id);
@@ -50,6 +51,11 @@ export const cartReducer = (state = defaultState, action) => {
       updateLocalStorage(tempState2);
       return tempState2;
 
+    case REMOVE_ALL_CART_PRODUCTS:
+      state = [];
+      updateLocalStorage(state);
+      return state;
+
     default:
       return state;
   }
@@ -70,4 +76,7 @@ export const decrCountAction = payload => ({
 export const removeCartProductAction = payload => ({
   type: REMOVE_CART_PRODUCT,
   payload,
+});
+export const removeAllCartProductsAction = () => ({
+  type: REMOVE_ALL_CART_PRODUCTS,
 });

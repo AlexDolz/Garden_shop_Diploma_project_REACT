@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import s from './ShoppingCartPage.module.css';
 import { NavLink } from 'react-router-dom';
 import { SlArrowRight } from 'react-icons/sl';
@@ -6,6 +6,7 @@ import CartList from '../../components/CartList/CartList';
 import Order from '../../components/Order/Order';
 
 const ShoppingCartPage = ({ type }) => {
+  const orderCompleteRef = useRef(null);
   useEffect(() => {
     const defaultTitle = document.title;
     if (type === 'cart') {
@@ -16,8 +17,15 @@ const ShoppingCartPage = ({ type }) => {
       document.title = defaultTitle;
     };
   }, [type]);
+
+  const handleOrderComplete = () => {
+    if (orderCompleteRef.current) {
+      orderCompleteRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   return (
     <div className='container'>
+      <div ref={orderCompleteRef}></div>
       <div className={s.shopping__cart__info__wrapper}>
         <h2 className={s.shopping__cart__title}>Shopping cart</h2>
         <NavLink to={'/products'}>
@@ -29,7 +37,7 @@ const ShoppingCartPage = ({ type }) => {
       </div>
       <div className={s.cart__order__wrapper}>
         <CartList />
-        <Order />
+        <Order onOrderComplete={handleOrderComplete} />
       </div>
     </div>
   );

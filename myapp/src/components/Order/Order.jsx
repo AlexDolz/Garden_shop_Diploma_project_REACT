@@ -2,11 +2,14 @@ import s from './Order.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import Input from '../UI/Input/Input';
 import Button from '../UI/Button/Button';
+import { sendOrderRequest } from '../../asynActions/requests';
+import { removeAllCartProductsAction } from '../../store/Reducers/cartReducer';
+import { useState } from 'react';
 
-const Order = () => {
+const Order = ({ onOrderComplete }) => {
   const cart = useSelector(store => store.cart);
   const dispatch = useDispatch();
-  console.log(cart);
+  const [orderComplete, setOrderComplete] = useState(false);
   let totalOrderSum = cart
     .reduce(
       (accum, elem) =>
@@ -38,6 +41,15 @@ const Order = () => {
     }
   };
 
+  const formSubmit = event => {
+    event.preventDefault();
+    sendOrderRequest(event.target.phone_num.value);
+    dispatch(removeAllCartProductsAction());
+    event.target.reset();
+    setOrderComplete(true);
+    onOrderComplete();
+  };
+
   return (
     <div className={s.order__wrapper}>
       <h3 className={s.order__title}>Order details</h3>
@@ -48,13 +60,17 @@ const Order = () => {
           <span className={s.order__sum__span}>$</span>
         </p>
       </div>
-      <form className={s.order__form}>
+      {orderComplete && (
+        <p className={s.order__complete}>Your order complete :)</p>
+      )}
+      <form onSubmit={formSubmit} className={s.order__form}>
         <Input
           placeholder='Phone number'
           className='order__input'
           name='phone_num'
           type='text'
           onKeyDown={handleKeyDown}
+          required
         />
         <Button text='Order' className='order__btn' />
       </form>

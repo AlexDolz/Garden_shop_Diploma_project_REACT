@@ -10,6 +10,7 @@ const Input = ({
   onClick,
   onChange,
   onKeyDown,
+  ...rest
 }) => {
   const inputClasses = classNames({
     [s.discount__input]: className === 'discount__input',
@@ -27,6 +28,7 @@ const Input = ({
       onClick={onClick}
       onChange={onChange}
       onKeyDown={onKeyDown}
+      {...rest}
     />
   );
 };

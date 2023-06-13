@@ -3,17 +3,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* animation: slide-in 1s ease forwards;
-  transform: translateY(-100%); */
 }
-/* @keyframes slide-in {
-  0% {
-    transform: translateY(-100%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-} */
 
 .navigation ul {
   display: flex;
@@ -51,7 +41,9 @@
   height: 29px;
   color: #000000;
   transition: color 0.3s ease-in-out;
-  position: absolute;
+}
+.navigation__icon__container {
+  position: relative;
 }
 
 .navigation ul li a:focus {

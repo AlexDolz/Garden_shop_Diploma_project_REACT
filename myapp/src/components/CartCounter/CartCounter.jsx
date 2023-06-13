@@ -6,9 +6,15 @@ const CartCounter = () => {
   const cart = useSelector(store => store.cart);
   const cartCounter = cart.reduce((accum, elem) => accum + elem.count, 0);
   return (
-    <div className={s.cart__counter__wrapper}>
-      <p className={s.cart__counter}>{cartCounter}</p>
-    </div>
+    <>
+      {cartCounter === 0 ? (
+        <></>
+      ) : (
+        <div className={s.cart__counter__wrapper}>
+          <p className={s.cart__counter}>{cartCounter}</p>
+        </div>
+      )}
+    </>
   );
 };
 

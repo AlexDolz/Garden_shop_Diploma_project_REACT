@@ -4,8 +4,10 @@ import { useNavigate } from 'react-router-dom';
 import ProductPrice from '../ProductPrice/ProductPrice';
 import { useDispatch } from 'react-redux';
 import { addProductToCartAction } from '../../store/Reducers/cartReducer';
+import { useState } from 'react';
 
 const ProductItem = ({ product }) => {
+  const [buttonText, setButtonText] = useState('Add to cart');
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { image, price, discont_price, title, id } = product;
@@ -18,6 +20,10 @@ const ProductItem = ({ product }) => {
   const handleAddToCartClick = event => {
     event.stopPropagation();
     dispatch(addProductToCartAction(product));
+    setButtonText('Added to cart!');
+    setTimeout(() => {
+      setButtonText('Add to cart');
+    }, 1000);
   };
 
   return (
@@ -30,7 +36,7 @@ const ProductItem = ({ product }) => {
         />
         <div className={s.product__modal}>
           <Button
-            text='Add to cart'
+            text={buttonText}
             className='add__to__cart__modal'
             onClick={handleAddToCartClick}
           />
