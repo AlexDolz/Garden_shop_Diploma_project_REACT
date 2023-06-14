@@ -1,6 +1,5 @@
 .head__container {
-  /* background: #a1e2eb; */
-  min-height: 600px;
+  height: 600px;
   margin-bottom: 40px;
   position: relative;
   transition: background 2s ease;
@@ -46,7 +45,6 @@
   position: absolute;
   right: 0;
   bottom: 0;
-  opacity: 0;
   animation: fadeIn 2s ease forwards;
 }
 
@@ -56,5 +54,16 @@
   }
   100% {
     opacity: 1;
+  }
+}
+
+@media (min-width: 1700px) {
+  .head__img {
+    position: relative;
+    bottom: 85px;
+  }
+  .head__texts__btn {
+    padding-top: 0;
+    padding-bottom: 80px;
   }
 }
