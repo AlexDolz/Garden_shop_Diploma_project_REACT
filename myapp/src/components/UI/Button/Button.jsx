@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import s from './Button.module.css';
 
-const Button = ({ text, className, onClick }) => {
+const Button = ({ text, className, onClick, disabled, style }) => {
   const buttonClasses = classNames(s.button, {
     [s.header__btn]: className === 'header__btn',
     [s.head__btn]: className === 'head__btn',
@@ -13,7 +13,12 @@ const Button = ({ text, className, onClick }) => {
     [s.order__btn]: className === 'order__btn',
   });
   return (
-    <button className={buttonClasses} onClick={onClick}>
+    <button
+      className={buttonClasses}
+      onClick={onClick}
+      disabled={disabled}
+      style={style}
+    >
       {text}
     </button>
   );

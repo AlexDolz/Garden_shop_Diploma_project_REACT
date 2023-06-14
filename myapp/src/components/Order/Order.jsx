@@ -47,6 +47,7 @@ const Order = ({ onOrderComplete }) => {
     dispatch(removeAllCartProductsAction());
     event.target.reset();
     setOrderComplete(true);
+    localStorage.removeItem('discountComplete');
     onOrderComplete();
   };
 

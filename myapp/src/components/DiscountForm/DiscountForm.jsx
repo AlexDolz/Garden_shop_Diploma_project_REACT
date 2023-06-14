@@ -1,11 +1,18 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import s from './DiscountForm.module.css';
 import Input from '../UI/Input/Input';
 import Button from '../UI/Button/Button';
 import { discountRequest } from '../../asynActions/requests';
 
 const DiscountForm = () => {
-  const [discountComplete, setDiscountComplete] = useState(false);
+  const [discountComplete, setDiscountComplete] = useState(
+    localStorage.getItem('discountComplete') === 'true' || false
+  );
+
+  useEffect(() => {
+    localStorage.setItem('discountComplete', discountComplete);
+  }, [discountComplete]);
+
   const handleKeyDown = event => {
     const allowedKeys = [
       '0',
@@ -55,7 +62,16 @@ const DiscountForm = () => {
           onKeyDown={handleKeyDown}
           required
         />
-        <Button text='Get a discount' className='discount__btn' />
+        <Button
+          text='Get a discount'
+          className='discount__btn'
+          disabled={discountComplete}
+          style={
+            discountComplete
+              ? { opacity: 0.5, cursor: 'not-allowed', hover: null }
+              : null
+          }
+        />
       </form>
     </div>
   );
