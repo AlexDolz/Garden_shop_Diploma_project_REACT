@@ -43,7 +43,11 @@ const ProductItem = ({ product }) => {
         </div>
       </div>
 
-      <ProductPrice price={price} discont_price={discont_price} />
+      <ProductPrice
+        price={price}
+        discont_price={discont_price}
+        showPercentage
+      />
       <h3 className={s.product__title}>{title}</h3>
     </div>
   );

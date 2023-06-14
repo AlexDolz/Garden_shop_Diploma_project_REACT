@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import s from './ProductInfoPage.module.css';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -12,8 +12,18 @@ const ProductInfoPage = () => {
   const { id } = useParams();
   const productList = useSelector(store => store.productList.productList);
   const productItem = productList.find(elem => elem.id === +id);
+  const [buttonText, setButtonText] = useState('To cart');
 
   const rootUrl = 'http://localhost:3333';
+
+  const handleAddToCartClick = event => {
+    event.stopPropagation();
+    dispatch(addProductToCartAction(productItem));
+    setButtonText('Added to cart!');
+    setTimeout(() => {
+      setButtonText('To cart');
+    }, 1000);
+  };
 
   useEffect(() => {
     const defaultTitle = document.title;
@@ -52,11 +62,12 @@ const ProductInfoPage = () => {
                 price={productItem.price}
                 discont_price={productItem.discont_price}
                 page='info'
+                showPercentage
               />
               <Button
                 className='add__to__cart__btn'
-                text='To cart'
-                onClick={() => dispatch(addProductToCartAction(productItem))}
+                text={buttonText}
+                onClick={handleAddToCartClick}
               />
             </div>
             <div className={s.descr__wrapper}>
