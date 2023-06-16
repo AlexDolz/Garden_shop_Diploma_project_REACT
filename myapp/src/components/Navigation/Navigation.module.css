@@ -46,7 +46,7 @@
   position: relative;
 }
 
-.navigation ul li a:focus {
+.navigation ul li .activeLink {
   color: #339933;
 }
 .navigation__icon__container:hover .navigation__cart__icon {

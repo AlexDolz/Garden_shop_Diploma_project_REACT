@@ -10,7 +10,7 @@ const Order = ({ onOrderComplete }) => {
   const cart = useSelector(store => store.cart);
   const dispatch = useDispatch();
   const [orderComplete, setOrderComplete] = useState(false);
-  let totalOrderSum = cart
+  const totalOrderSum = cart
     .reduce(
       (accum, elem) =>
         accum +
@@ -43,12 +43,18 @@ const Order = ({ onOrderComplete }) => {
 
   const formSubmit = event => {
     event.preventDefault();
-    sendOrderRequest(event.target.phone_num.value);
-    dispatch(removeAllCartProductsAction());
-    event.target.reset();
-    setOrderComplete(true);
-    localStorage.removeItem('discountComplete');
-    onOrderComplete();
+    const convertedTotalSum = parseFloat(totalOrderSum);
+
+    if (convertedTotalSum === 0) {
+      setOrderComplete(false);
+    } else {
+      sendOrderRequest(event.target.phone_num.value);
+      dispatch(removeAllCartProductsAction());
+      event.target.reset();
+      setOrderComplete(true);
+      localStorage.removeItem('discountComplete');
+      onOrderComplete();
+    }
   };
 
   return (
