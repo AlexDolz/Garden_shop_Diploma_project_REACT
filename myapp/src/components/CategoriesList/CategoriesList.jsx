@@ -13,12 +13,10 @@ const CategoriesList = ({ numCategories }) => {
   }, []);
 
   return (
-    <div className='container'>
-      <div className={s.categories__container}>
-        {categoriesList.slice(0, numCategories).map((elem, index) => (
-          <CategoryItem key={index} {...elem} />
-        ))}
-      </div>
+    <div className={s.categories__container}>
+      {categoriesList.slice(0, numCategories).map((elem, index) => (
+        <CategoryItem key={index} {...elem} />
+      ))}
     </div>
   );
 };

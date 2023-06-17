@@ -1,6 +1,5 @@
 .discount__form {
   max-width: 473px;
-  min-height: 75.44px;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -11,4 +10,15 @@
   color: #ff32a1;
   font-weight: 600;
   padding-bottom: 20px;
+}
+
+@media (max-width: 894px) {
+  .discount__complete {
+    line-height: 35px;
+  }
+}
+@media (max-width: 849px) {
+  .discount__form {
+    padding-bottom: 50px;
+  }
 }

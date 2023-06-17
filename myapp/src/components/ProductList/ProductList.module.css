@@ -6,7 +6,6 @@
   row-gap: 44px;
   padding-bottom: 80px;
   animation: fadeIn 0.8s ease forwards;
-  opacity: 0;
 }
 @keyframes fadeIn {
   0% {

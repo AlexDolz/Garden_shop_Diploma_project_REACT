@@ -34,7 +34,7 @@ const App = () => {
           <Route path='/cart' element={<ShoppingCartPage type={'cart'} />} />
           <Route
             path='/categories'
-            element={<CategoriesListPage type='categories' />}
+            element={<CategoriesListPage type={'categories'} />}
           />
           <Route
             path='/categories/:id'

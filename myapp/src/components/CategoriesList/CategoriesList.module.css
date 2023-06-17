@@ -4,9 +4,10 @@
   justify-items: center;
   gap: 42px;
   row-gap: 58px;
-  padding: 0 6px 80px 6px;
+  padding: 0 25px 80px 25px;
   animation: fadeIn 0.5s ease forwards;
-  opacity: 0;
+  max-width: 1410px;
+  margin: 0 auto;
 }
 @keyframes fadeIn {
   0% {
@@ -14,5 +15,11 @@
   }
   100% {
     opacity: 1;
+  }
+}
+
+@media (max-width: 580px) {
+  .categories__container {
+    padding: 0 6px 80px 6px;
   }
 }

@@ -10,3 +10,11 @@
   line-height: 130%;
   letter-spacing: 0.03em;
 }
+
+@media (max-width: 1025.5px) {
+  .categories__texts__btn {
+    flex-direction: column;
+    gap: 30px;
+    padding-bottom: 50px;
+  }
+}

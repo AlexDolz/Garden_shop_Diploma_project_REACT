@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import s from './HomePage.module.css';
 import Head from '../../components/Head/Head';
 import CategoriesList from '../../components/CategoriesList/CategoriesList';
@@ -6,8 +6,19 @@ import DiscountContainer from '../../components/DiscountContainer/DiscountContai
 import Sale from '../../components/Sale/Sale';
 import { NavLink } from 'react-router-dom';
 import Button from '../../components/UI/Button/Button';
+import { useDispatch } from 'react-redux';
+import {
+  fetchAllProductList,
+  fetchCategoriesList,
+} from '../../asynActions/requests';
 
 const HomePage = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchCategoriesList());
+    dispatch(fetchAllProductList());
+  }, [dispatch]);
   return (
     <div>
       <Head />
