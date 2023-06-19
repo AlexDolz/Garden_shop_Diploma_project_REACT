@@ -8,7 +8,6 @@
 
 .filter__label {
   display: flex;
-  gap: 15px;
   align-items: center;
   font-weight: 600;
   font-size: 20px;
@@ -17,6 +16,9 @@
   margin-right: 40px;
   cursor: pointer;
   user-select: none;
+}
+.filter__label__price {
+  gap: 15px;
 }
 .filter__label__discount {
   margin-right: 91px;
@@ -44,4 +46,53 @@
 .filter__select:focus {
   box-shadow: 0 0 3px #339933 inset;
   border-color: #339933;
+}
+
+@media (max-width: 1057px) {
+  .form {
+    flex-direction: column;
+    align-items: unset;
+    gap: 20px;
+  }
+  .filter__label {
+    font-size: 26px;
+  }
+  .filter__label__price {
+    gap: 38px;
+  }
+  .filter__label__discount {
+    gap: 65px;
+  }
+  .filter__wrapper {
+    padding-bottom: 46px;
+  }
+}
+
+@media (max-width: 710px) {
+  .form {
+    align-items: center;
+  }
+  .filter__label__discount {
+    margin-right: 0;
+  }
+  .filter__label {
+    margin-right: 0;
+  }
+}
+@media (max-width: 405px) {
+  .filter__label {
+    font-size: 20px;
+    gap: 20px;
+  }
+
+  .filter__label__discount {
+    display: flex;
+    justify-content: space-between;
+    width: 311px;
+  }
+  .filter__label__price {
+    display: flex;
+    justify-content: space-between;
+    width: 311px;
+  }
 }

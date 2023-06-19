@@ -62,3 +62,8 @@
 .product__discount__percentage.info {
   font-size: 28px;
 }
+@media (max-width: 548px) {
+  .product__price__wrapper.cart {
+    width: auto;
+  }
+}

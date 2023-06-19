@@ -40,3 +40,9 @@ html {
   margin: 0 auto;
   padding: 0 15px;
 }
+
+@media (min-width: 1700px) {
+  .container {
+    max-width: 1630px;
+  }
+}

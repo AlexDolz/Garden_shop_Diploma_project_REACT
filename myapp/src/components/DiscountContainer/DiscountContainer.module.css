@@ -35,10 +35,16 @@
   padding-bottom: 46px;
 }
 
+@media (min-width: 1700px) {
+  .discount__content {
+    justify-content: center;
+    gap: 400px;
+  }
+  .discount__info {
+    padding-right: 200px;
+  }
+}
 @media (max-width: 1292px) {
-  /* .discount__content {
-    gap: 120px;
-  } */
   .discount__img {
     padding-left: 75px;
   }

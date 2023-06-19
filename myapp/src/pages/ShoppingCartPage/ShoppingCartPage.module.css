@@ -34,4 +34,21 @@
   display: flex;
   justify-content: space-between;
   padding-bottom: 191px;
+  gap: 30px;
+}
+
+@media (max-width: 934px) {
+  .cart__order__wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media (max-width: 553px) {
+  .shopping__cart__info__wrapper {
+    display: block;
+  }
+  .shopping__cart__title {
+    padding-bottom: 20px;
+    font-size: 37px;
+  }
 }

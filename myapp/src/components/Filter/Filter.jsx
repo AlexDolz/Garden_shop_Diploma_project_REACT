@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import s from './Filter.module.css';
 import Input from '../UI/Input/Input';
 import { useDispatch } from 'react-redux';
@@ -65,12 +65,30 @@ const Filter = ({ type, filterValues, onFilterChange }) => {
     dispatch(sortProductsAction(value));
   };
 
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  console.log(screenWidth);
+
   return (
     <div className={s.filter__wrapper}>
       <form className={s.form}>
         <label
-          className={s.filter__label}
-          style={type !== 'all' ? { marginRight: '68px' } : {}}
+          className={`${s.filter__label} ${s.filter__label__price}`}
+          style={
+            type !== 'all' && screenWidth > 710 ? { marginRight: '68px' } : {}
+          }
         >
           Price
           <Input

@@ -72,7 +72,7 @@ const Header = () => {
           <ul>
             <li>
               <NavLink
-                exact
+                exact='true'
                 to='/'
                 className={location.pathname === '/' ? s.activeLink : ''}
               >
@@ -108,39 +108,39 @@ const Header = () => {
       </div>
       <div className={s.burger__menu}>
         {/* <Menu right styles={burgerMenuStyles} noOverlay> */}
-        <Menu>
-          <nav className={s.navigation}>
-            <ul>
-              <li>
-                <NavLink
-                  exact
-                  to='/'
-                  className={location.pathname === '/' ? s.activeLink : ''}
-                >
-                  Main Page
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to='/products'
-                  className={
-                    location.pathname === '/products' ? s.activeLink : ''
-                  }
-                >
-                  All Products
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to='/sales'
-                  className={location.pathname === '/sales' ? s.activeLink : ''}
-                >
-                  All Sales
-                </NavLink>
-              </li>
-            </ul>
-          </nav>
-        </Menu>
+        {/* <Menu> */}
+        {/* <nav className={s.navigation}>
+          <ul>
+            <li>
+              <NavLink
+                exact
+                to='/'
+                className={location.pathname === '/' ? s.activeLink : ''}
+              >
+                Main Page
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to='/products'
+                className={
+                  location.pathname === '/products' ? s.activeLink : ''
+                }
+              >
+                All Products
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to='/sales'
+                className={location.pathname === '/sales' ? s.activeLink : ''}
+              >
+                All Sales
+              </NavLink>
+            </li>
+          </ul>
+        </nav> */}
+        {/* </Menu> */}
       </div>
     </header>
   );

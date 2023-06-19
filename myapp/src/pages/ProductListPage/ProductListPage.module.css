@@ -15,3 +15,9 @@
   width: 400px;
   height: 400px;
 }
+
+@media (max-width: 710px) {
+  .products__page__title {
+    text-align: center;
+  }
+}

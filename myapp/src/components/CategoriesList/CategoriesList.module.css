@@ -18,6 +18,12 @@
   }
 }
 
+@media (min-width: 1700px) {
+  .categories__container {
+    max-width: 1700px;
+  }
+}
+
 @media (max-width: 580px) {
   .categories__container {
     padding: 0 6px 80px 6px;
