@@ -9,6 +9,7 @@ import CategoriesListPage from './pages/CategoriesListPage/CategoriesListPage';
 import Footer from './components/Footer/Footer';
 import ProductInfoPage from './pages/ProductInfoPage/ProductInfoPage';
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
+import ScrollToTopButton from './components/ScrollToTopButton/ScrollToTopButton';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -45,6 +46,7 @@ const App = () => {
         </Routes>
       </main>
       <Footer />
+      <ScrollToTopButton />
     </div>
   );
 };

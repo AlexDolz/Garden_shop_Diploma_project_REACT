@@ -36,11 +36,11 @@
   cursor: pointer;
   transition: color 0.3s ease-in-out;
 }
-.contacts__icon__item:hover {
-  color: #c55b94;
+.contacts__icon__item:hover path {
+  fill: #c55b94;
 }
-.whatsapp__icon:hover {
-  color: #339933;
+.whatsapp__icon:hover path {
+  fill: #339933;
 }
 .icon__item__text {
   font-weight: 600;

@@ -84,8 +84,8 @@
 .navigation ul li .activeLink {
   color: #339933;
 }
-.navigation__icon__container:hover .navigation__cart__icon {
-  color: #339933;
+.navigation__icon__container:hover .navigation__cart__icon path {
+  fill: #339933;
 }
 
 .burger__menu {
