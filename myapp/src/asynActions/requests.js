@@ -1,4 +1,5 @@
 import { getCategoriesListAction } from '../store/Reducers/categoriesListReducer';
+import { getProductInfoAction } from '../store/Reducers/productInfoReducer';
 import {
   productListByCategoryAction,
   productListBySaleAction,
@@ -18,7 +19,7 @@ export const fetchCategoriesList = () => {
 
 const productListUrl = `${rootUrl}/products/all`;
 
-export function fetchAllProductList(type) {
+export const fetchAllProductList = type => {
   return function (dispatch) {
     fetch(productListUrl)
       .then(res => res.json())
@@ -29,17 +30,27 @@ export function fetchAllProductList(type) {
         }
       });
   };
-}
+};
 
 const categoryItemProductsUrl = `${rootUrl}/categories/`;
 
-export function fetchProductListByCategory(id) {
+export const fetchProductListByCategory = id => {
   return function (dispatch) {
     fetch(`${categoryItemProductsUrl}/${id}`)
       .then(res => res.json())
       .then(data => dispatch(productListByCategoryAction(data)));
   };
-}
+};
+
+const productInfoUrl = `${rootUrl}/products/`;
+
+export const fetchProductInfo = id => {
+  return function (dispatch) {
+    fetch(`${productInfoUrl}/${id}`)
+      .then(res => res.json())
+      .then(data => dispatch(getProductInfoAction(data)));
+  };
+};
 
 const getDiscountUrl = `${rootUrl}/sale/send`;
 

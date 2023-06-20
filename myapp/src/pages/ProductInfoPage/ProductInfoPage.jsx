@@ -6,12 +6,12 @@ import Button from '../../components/UI/Button/Button';
 import ProductPrice from '../../components/ProductPrice/ProductPrice';
 import product_not_found from './media/product_not_found.png';
 import { addProductToCartAction } from '../../store/Reducers/cartReducer';
+import { fetchProductInfo } from '../../asynActions/requests';
 
 const ProductInfoPage = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
-  const productList = useSelector(store => store.productList.productList);
-  const productItem = productList.find(elem => elem.id === +id);
+  const productItem = useSelector(store => store.productInfo);
   const [buttonText, setButtonText] = useState('To cart');
 
   const rootUrl = 'http://localhost:3333';
@@ -27,7 +27,7 @@ const ProductInfoPage = () => {
 
   useEffect(() => {
     const defaultTitle = document.title;
-    if (!productItem) {
+    if (productItem.status) {
       document.title = 'Product not found';
     } else {
       document.title = `Garden - ${productItem.title}`;
@@ -38,7 +38,11 @@ const ProductInfoPage = () => {
     };
   }, [productItem]);
 
-  if (!productItem) {
+  useEffect(() => {
+    dispatch(fetchProductInfo(id));
+  }, [dispatch, id]);
+
+  if (productItem.status) {
     return (
       <div className={s.product__not__found__wrapper}>
         <img src={product_not_found} alt='product_not_found' />
