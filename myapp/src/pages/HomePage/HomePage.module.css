@@ -11,7 +11,7 @@
   letter-spacing: 0.03em;
 }
 
-@media (max-width: 1025.5px) {
+@media (max-width: 1033.5px) {
   .categories__texts__btn {
     flex-direction: column;
     gap: 30px;
