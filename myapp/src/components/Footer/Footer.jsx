@@ -1,7 +1,5 @@
 import React from 'react';
 import s from './Footer.module.css';
-import { SlSocialInstagram } from 'react-icons/sl';
-import { SiWhatsapp } from 'react-icons/si';
 import Map from '../Map/Map';
 
 const Footer = () => {
