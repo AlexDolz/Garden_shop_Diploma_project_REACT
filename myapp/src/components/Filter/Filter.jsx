@@ -79,15 +79,13 @@ const Filter = ({ type, filterValues, onFilterChange }) => {
     };
   }, []);
 
-  console.log(screenWidth);
-
   return (
     <div className={s.filter__wrapper}>
       <form className={s.form}>
         <label
           className={`${s.filter__label} ${s.filter__label__price}`}
           style={
-            type !== 'all' && screenWidth > 710 ? { marginRight: '68px' } : {}
+            type !== 'all' && screenWidth >= 1056 ? { marginRight: '68px' } : {}
           }
         >
           Price

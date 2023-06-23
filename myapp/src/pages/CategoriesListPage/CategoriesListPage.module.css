@@ -5,3 +5,8 @@
   letter-spacing: 0.03em;
   padding-bottom: 81px;
 }
+@media (max-width: 1033.5px) {
+  .categories__title {
+    text-align: center;
+  }
+}
