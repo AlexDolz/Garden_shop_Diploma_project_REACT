@@ -9,6 +9,7 @@
 - [backend link](https://github.com/AlexDolz/telran_project_backend_master)
 - [online-shop_link](https://alexdolz.github.io/Garden_shop_Diplom_project_REACT/)
 - [project-layout](https://www.figma.com/file/yNWvXvjZC0t8d9yBOpeEPy/Garden?type=design&node-id=4743-907&mode=design&t=DIYMHS8iq3eNkFjV-0)
+- [diplom-project-diagram](https://drive.google.com/file/d/1dKhOgZT3A0zFr3EFoy8lw7917Ih6DI1M/view?usp=sharing)
 
 React libraries using during developing:
 
