@@ -8,6 +8,20 @@
 
 - [backend link](https://github.com/AlexDolz/telran_project_backend_master)
 - [online-shop_link](https://alexdolz.github.io/Garden_shop_Diplom_project_REACT/)
+- [project-layout](https://www.figma.com/file/yNWvXvjZC0t8d9yBOpeEPy/Garden?type=design&node-id=4743-907&mode=design&t=DIYMHS8iq3eNkFjV-0)
+
+React libraries using during developing:
+
+- react-classnames,
+- react-icons,
+- react-redux,
+- react-router-dom,
+- redux,
+- react-scroll,
+- redux-thunk.
+- react-router-hash-link,
+- react-hooks,
+- gh-pages
 
 ![Garden — Online shop - Google Chrome 2023-06-23 131](https://github.com/AlexDolz/Garden_shop_Diplom_project_REACT/assets/108806800/6c5f975d-6fc1-4dc3-b4cd-eec086d4b1be)
 
