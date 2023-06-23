@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import s from './Header.module.css';
 import header_logo from './media/header_logo.png';
 import Button from '../UI/Button/Button';
@@ -22,6 +22,14 @@ const Header = () => {
       setIsMenuOpen(true);
     }
   };
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.classList.add('body__no__scroll');
+    } else {
+      document.body.classList.remove('body__no__scroll');
+    }
+  }, [isMenuOpen]);
 
   return (
     <div>

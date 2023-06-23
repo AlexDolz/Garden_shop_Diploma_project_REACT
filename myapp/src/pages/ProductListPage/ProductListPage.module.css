@@ -12,12 +12,18 @@
   padding-bottom: 80px;
 }
 .products__not__found__img {
-  width: 400px;
+  max-width: 100%;
   height: 400px;
 }
 
-@media (max-width: 710px) {
+@media (max-width: 1056px) {
   .products__page__title {
     text-align: center;
+  }
+}
+
+@media (max-width: 548px) {
+  .products__not__found__img {
+    height: 100%;
   }
 }

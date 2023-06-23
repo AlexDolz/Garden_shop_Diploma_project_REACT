@@ -4,7 +4,6 @@
   align-items: center;
   padding: 20px 0 76px 0;
   animation: slide-in 1s ease forwards;
-  transform: translateY(-100%);
 }
 
 .header__logo__btn__container {
@@ -102,6 +101,7 @@
   .desktop__menu {
     display: none;
   }
+
   .overlay {
     position: fixed;
     top: 0;
@@ -188,7 +188,7 @@
   .close__button {
     position: fixed;
     top: 34px;
-    right: 20px;
+    right: 10px;
     font-size: 44px;
     font-weight: 500;
     color: #000;

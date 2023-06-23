@@ -67,3 +67,8 @@
     width: auto;
   }
 }
+@media (max-width: 370px) {
+  .product__price__wrapper.info {
+    gap: 40px;
+  }
+}

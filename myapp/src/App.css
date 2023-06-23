@@ -40,6 +40,9 @@ html {
   margin: 0 auto;
   padding: 0 15px;
 }
+.body__no__scroll {
+  overflow: hidden;
+}
 
 @media (min-width: 1700px) {
   .container {

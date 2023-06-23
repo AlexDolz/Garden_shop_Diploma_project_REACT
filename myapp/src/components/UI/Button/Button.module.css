@@ -114,6 +114,7 @@
 }
 
 .add__to__cart__btn {
+  max-width: 100%;
   width: 341px;
   height: 86px;
   background: #339933;
