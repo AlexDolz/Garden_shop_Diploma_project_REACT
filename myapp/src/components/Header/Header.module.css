@@ -101,6 +101,9 @@
   .desktop__menu {
     display: none;
   }
+  .navigation ul li a::after {
+    margin-top: 15px;
+  }
 
   .overlay {
     position: fixed;
@@ -178,11 +181,15 @@
     gap: 60px;
   }
   .navigation.burger ul li a {
-    font-size: 35px;
+    font-size: 32px;
     font-weight: 600;
     color: #339933;
-    text-shadow: -3px 1px 4px gray;
-    letter-spacing: 2px;
+    text-shadow: -3px 1px 4px rgb(200, 200, 125);
+    letter-spacing: 1px;
+    transition: all 0.3s;
+  }
+  .navigation.burger ul li a:hover {
+    text-shadow: none;
   }
 
   @keyframes slide-in {
