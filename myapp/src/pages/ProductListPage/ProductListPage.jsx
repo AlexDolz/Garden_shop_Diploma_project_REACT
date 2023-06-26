@@ -9,6 +9,7 @@ import {
 import ProductList from '../../components/ProductList/ProductList';
 import Filter from '../../components/Filter/Filter';
 import products_not_found from './media/products_not_found.png';
+import { productListBySaleAction } from '../../store/Reducers/productListReducer';
 
 const ProductListPage = ({ type }) => {
   const { id } = useParams();
@@ -31,6 +32,9 @@ const ProductListPage = ({ type }) => {
       dispatch(fetchProductListByCategory(id));
     } else {
       dispatch(fetchAllProductList(type));
+      if (type === 'sale') {
+        dispatch(productListBySaleAction());
+      }
     }
   }, [id, type, dispatch]);
 
