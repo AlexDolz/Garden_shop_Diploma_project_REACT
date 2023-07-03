@@ -26,6 +26,6 @@ React libraries using during developing:
 - react-hooks,
 - gh-pages
 
-![Garden — Online shop - Google Chrome 2023-06-23 131](https://github.com/AlexDolz/Garden_shop_Diplom_project_REACT/assets/108806800/6c5f975d-6fc1-4dc3-b4cd-eec086d4b1be)
+![Garden — Online shop - Google Chrome 2023-07-03 17](https://github.com/AlexDolz/Garden_shop_Diplom_project_REACT/assets/108806800/5faadb53-f788-4481-8790-7673c2ee589e)
 
 <img src='https://github.com/AlexDolz/Garden_shop_Diplom_project_REACT/assets/108806800/5a798f1f-c0d5-44ab-8d59-95a33e8a9661.png' width='200' height='100%'>
