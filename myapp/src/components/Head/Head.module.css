@@ -45,7 +45,7 @@
   max-width: 100%;
   position: absolute;
   right: 0;
-  bottom: 0;
+  bottom: -43px;
   animation: fadeIn 2s ease forwards;
 }
 
@@ -61,7 +61,7 @@
 @media (min-width: 1700px) {
   .head__img {
     position: relative;
-    bottom: 85px;
+    bottom: 15px;
   }
   .head__texts__btn {
     padding-top: 0;
@@ -72,20 +72,14 @@
   }
 }
 
-@media (max-width: 990px) {
+@media (max-width: 1233px) {
   .head__img {
-    width: 50%;
-    height: 70%;
+    width: 60%;
     object-fit: cover;
     bottom: 22px;
   }
 }
-@media (max-width: 800px) {
-  .head__img {
-    object-fit: scale-down;
-    bottom: 20px;
-  }
-}
+
 @media (max-width: 567px) {
   .head__content {
     justify-content: center;

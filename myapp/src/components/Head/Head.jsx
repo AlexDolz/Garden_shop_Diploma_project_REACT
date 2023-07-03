@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import s from './Head.module.css';
 import Button from '../UI/Button/Button';
-import banner_img from './media/banner_img.png';
+import banner_img from './media/banner-img.png';
 import { Link } from 'react-scroll';
 
 const Head = () => {
