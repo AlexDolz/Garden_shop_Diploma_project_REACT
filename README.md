@@ -1,4 +1,4 @@
-# Diplom_project
+# Diploma_project
 
 # Garden_shop
 
